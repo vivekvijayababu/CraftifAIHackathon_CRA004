@@ -9,6 +9,7 @@ a=importlib.util.module_from_spec(spec); spec.loader.exec_module(a)
 
 @pytest.fixture
 def client(tmp_path,monkeypatch):
+    monkeypatch.setattr(a,'recorded_run',None)
     monkeypatch.setattr(a,'DB_PATH',str(tmp_path/'test.db')); a.states.clear()
     with TestClient(a.app) as connection:
         yield connection

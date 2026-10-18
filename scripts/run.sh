@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-exec "${TRAFFICFLOW_PYTHON:-.venv/bin/python}" -m uvicorn backend.app:app --host 127.0.0.1 --port "${PORT:-8002}"
+exec "${TRAFFICFLOW_PYTHON:-.venv/bin/python}" -m uvicorn backend.app:app --host 127.0.0.1 --port "${PORT:-8004}"

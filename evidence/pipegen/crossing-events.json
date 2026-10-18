@@ -1,0 +1,282 @@
+[
+  {
+    "id": "2:1",
+    "track_id": 2,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 198.301,
+    "frame": 20,
+    "pts_ns": 733333333
+  },
+  {
+    "id": "8:1",
+    "track_id": 8,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 194.931,
+    "frame": 48,
+    "pts_ns": 1666666666
+  },
+  {
+    "id": "3:1",
+    "track_id": 3,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 231.23,
+    "frame": 67,
+    "pts_ns": 2300000000
+  },
+  {
+    "id": "7:1",
+    "track_id": 7,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 212.318,
+    "frame": 155,
+    "pts_ns": 5233333333
+  },
+  {
+    "id": "27:1",
+    "track_id": 27,
+    "label": "motorcycle",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 224.571,
+    "frame": 384,
+    "pts_ns": 12866666666
+  },
+  {
+    "id": "28:1",
+    "track_id": 28,
+    "label": "person",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.09,
+    "frame": 384,
+    "pts_ns": 12866666666
+  },
+  {
+    "id": "30:1",
+    "track_id": 30,
+    "label": "motorcycle",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 221.702,
+    "frame": 408,
+    "pts_ns": 13666666666
+  },
+  {
+    "id": "31:1",
+    "track_id": 31,
+    "label": "person",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 191.258,
+    "frame": 408,
+    "pts_ns": 13666666666
+  },
+  {
+    "id": "19:1",
+    "track_id": 19,
+    "label": "person",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 180.463,
+    "frame": 411,
+    "pts_ns": 13766666666
+  },
+  {
+    "id": "17:1",
+    "track_id": 17,
+    "label": "person",
+    "direction": "right_to_left",
+    "ix": 640.0,
+    "iy": 286.378,
+    "frame": 432,
+    "pts_ns": 14466666666
+  },
+  {
+    "id": "35:1",
+    "track_id": 35,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.091,
+    "frame": 467,
+    "pts_ns": 15633333333
+  },
+  {
+    "id": "41:1",
+    "track_id": 41,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 217.839,
+    "frame": 492,
+    "pts_ns": 16466666666
+  },
+  {
+    "id": "53:1",
+    "track_id": 53,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 343.464,
+    "frame": 519,
+    "pts_ns": 17366666666
+  },
+  {
+    "id": "50:1",
+    "track_id": 50,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.963,
+    "frame": 540,
+    "pts_ns": 18066666666
+  },
+  {
+    "id": "51:1",
+    "track_id": 51,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.952,
+    "frame": 540,
+    "pts_ns": 18066666666
+  },
+  {
+    "id": "69:1",
+    "track_id": 69,
+    "label": "car",
+    "direction": "right_to_left",
+    "ix": 640.0,
+    "iy": 194.535,
+    "frame": 561,
+    "pts_ns": 18766666666
+  },
+  {
+    "id": "67:1",
+    "track_id": 67,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 214.532,
+    "frame": 588,
+    "pts_ns": 19666666666
+  },
+  {
+    "id": "79:1",
+    "track_id": 79,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.096,
+    "frame": 599,
+    "pts_ns": 20033333333
+  },
+  {
+    "id": "82:1",
+    "track_id": 82,
+    "label": "car",
+    "direction": "right_to_left",
+    "ix": 640.0,
+    "iy": 194.456,
+    "frame": 623,
+    "pts_ns": 20833333333
+  },
+  {
+    "id": "81:1",
+    "track_id": 81,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 213.476,
+    "frame": 651,
+    "pts_ns": 21766666666
+  },
+  {
+    "id": "88:1",
+    "track_id": 88,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 202.196,
+    "frame": 679,
+    "pts_ns": 22700000000
+  },
+  {
+    "id": "101:1",
+    "track_id": 101,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 200.131,
+    "frame": 726,
+    "pts_ns": 24266666666
+  },
+  {
+    "id": "99:1",
+    "track_id": 99,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 200.192,
+    "frame": 726,
+    "pts_ns": 24266666666
+  },
+  {
+    "id": "114:1",
+    "track_id": 114,
+    "label": "car",
+    "direction": "right_to_left",
+    "ix": 640.0,
+    "iy": 193.768,
+    "frame": 742,
+    "pts_ns": 24800000000
+  },
+  {
+    "id": "110:1",
+    "track_id": 110,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 211.057,
+    "frame": 759,
+    "pts_ns": 25366666666
+  },
+  {
+    "id": "124:1",
+    "track_id": 124,
+    "label": "car",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 206.812,
+    "frame": 867,
+    "pts_ns": 28966666666
+  },
+  {
+    "id": "127:1",
+    "track_id": 127,
+    "label": "motorcycle",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 230.02,
+    "frame": 884,
+    "pts_ns": 29533333333
+  },
+  {
+    "id": "128:1",
+    "track_id": 128,
+    "label": "person",
+    "direction": "left_to_right",
+    "ix": 640.0,
+    "iy": 197.582,
+    "frame": 884,
+    "pts_ns": 29533333333
+  }
+]

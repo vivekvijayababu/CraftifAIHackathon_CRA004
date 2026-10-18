@@ -1,0 +1,54 @@
+{
+  "note": "Original artifacts read-only. Paths made project relative, account/project names removed. Metadata snapshot is byte-identical; other files explicitly labeled sanitized or extracted. Pipeline IR exports pipeline_ir only, omitting internal loop state.",
+  "sources": [
+    {
+      "source_relative": "output/metadata.json",
+      "sha256": "51f80e7a468d185c628b6bc52168efb37aa43c20fcbcc28586e7286a6c223f30",
+      "bytes": 2462702
+    },
+    {
+      "source_relative": "PipelineIR.json",
+      "sha256": "7942751a1103479db7fdd2370fceecae065917e3fc176106dee2594dac3c4c4c",
+      "bytes": 27966
+    },
+    {
+      "source_relative": "model_stage/engine.data.json",
+      "sha256": "d9ddd6a33b6bccc0b1cb9692342c60791aa16468f570363bd1341fbccfac8ed7",
+      "bytes": 693460
+    },
+    {
+      "source_relative": "model_stage/compile.data.json",
+      "sha256": "524d29bc41c6922f78080a929f6555b157e44b92579dd48307a7912b8e776061",
+      "bytes": 126559
+    },
+    {
+      "source_relative": "model_stage/yolov8m.fp16.runtime.profile.json",
+      "sha256": "3fbda06239ec56695be120253b8d1e0231b4945be4bec4a89c4c0d394e0f5c38",
+      "bytes": 34593
+    },
+    {
+      "source_relative": "model_stage/ModelStage.log",
+      "sha256": "84b65aa5d378abd69d696eb42b8c511004621ae046ae366f2999362d8a3b0007",
+      "bytes": 866
+    },
+    {
+      "source_relative": "pipeline/deepstream/.run_output.txt",
+      "sha256": "cd6de17b39aa09e113ea6060967a211d91a1375c3936cd76d50b1cbe0f8a44fe",
+      "bytes": 2682
+    },
+    {
+      "source_relative": "pipeline/deepstream/debug.log",
+      "sha256": "740b54b2ca2ade7b74b717c8647b483020a7c5a2320ab39663c6b44b3e028d23",
+      "bytes": 3095
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/line_crossing_render_process.cpp",
+      "sha256": "6ea4ced3e30b7a60753b5caa097a9670084a5967fed012edd12efc30f69e2bf9",
+      "bytes": 19697
+    }
+  ],
+  "unavailable": [
+    "model_stage/ModelStage.json: OS PermissionError; not needed because engine.data.json and compile.data.json are readable.",
+    ".cache/evidence/artifacts/*.json: OS PermissionError; not copied."
+  ]
+}

@@ -1,0 +1,31 @@
+[run.sh] JSON -> ${PIPEGEN_PROJECT}/output/metadata.json
+make: Entering directory '${PIPEGEN_PROJECT}/pipeline/deepstream/parsers'
+make: Nothing to be done for 'all'.
+make: Leaving directory '${PIPEGEN_PROJECT}/pipeline/deepstream/parsers'
+Setting pipeline to PAUSED ...
+gstnvtracker: Loading low-level lib at /opt/nvidia/deepstream/deepstream/lib/libnvds_nvmultiobjecttracker.so
+[NvMultiObjectTracker] Initialized
+0:00:00.419239544  1277 0x5dc34c8d1b30 INFO        nvinfer_backport gstnvinfer.cpp:684:gst_nvinfer_backport_logger:<nvinferbackport0> NvDsInferContext[UID 1]: Info from NvDsInferContextImpl::deserializeEngineAndBackend() <nvdsinfer_context_impl.cpp:2161> [UID = 1]: deserialized trt engine from :${PIPEGEN_PROJECT}/model_stage/yolov8m.fp16.plan
+0:00:00.419272247  1277 0x5dc34c8d1b30 INFO        nvinfer_backport gstnvinfer.cpp:684:gst_nvinfer_backport_logger:<nvinferbackport0> NvDsInferContext[UID 1]: Info from NvDsInferContextImpl::generateBackendContext() <nvdsinfer_context_impl.cpp:2264> [UID = 1]: Use deserialized engine model: ${PIPEGEN_PROJECT}/model_stage/yolov8m.fp16.plan
+0:00:00.432200018  1277 0x5dc34c8d1b30 INFO        nvinfer_backport gstnvinfer_impl.cpp:343:notifyLoadModelStatus:<nvinferbackport0> [UID 1]: Load new model:${PIPEGEN_PROJECT}/pipeline/deepstream/configs/config_det_pgie.txt sucessfully
+Implicit layer support has been deprecated
+INFO: [Implicit Engine Info]: layers num: 0
+
+Pipeline is PREROLLING ...
+Got context from element 'eglglessink0': gst.egl.EGLDisplay=context, display=(GstEGLDisplay)NULL;
+Failed to query video capabilities: Invalid argument
+[ParseConfigDetPgie] first call: layer=output0 numDims=2 networkInput=640x480 numClasses=80 outputs=1
+[meta_json] file -> ${PIPEGEN_PROJECT}/output/metadata.json
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+Redistribute latency...
+New clock: GstSystemClock
+Redistribute latency...
+nvstreammux: Successfully handled EOS for source_id=0
+Got EOS from element "pipeline0".
+EOS received - stopping pipeline...
+Execution ended after 0:00:29.967947322
+Setting pipeline to NULL ...
+Freeing pipeline ...
+[NvMultiObjectTracker] De-initialized
+[meta_json] 900 frames, 7857 objects

@@ -1,0 +1,22 @@
+
+==============================================================================
+[2026-10-18T09:37:17+00:00] compile FAILED (attempt 1/4)
+------------------------------------------------------------------------------
+make: Entering directory '${PIPEGEN_PROJECT}/pipeline/deepstream/parsers'
+mkdir -p ../build
+rm -f ../build/libconfig_det_pgie_parser.so
+g++ -fPIC -O2 -std=c++14 -I /usr/local/cuda-12.6/include -I /opt/nvidia/deepstream/deepstream-7.1/sources/includes -I /opt/nvidia/deepstream/deepstream-7.1/sources/includes -I/usr/include/opencv4 -o ../build/libconfig_det_pgie_parser.so config_det_pgie_parser.cpp -shared -Wl,--no-undefined
+mkdir -p ../build
+rm -f ../build/libline_crossing_render_process.so
+g++ -fPIC -O2 -std=c++17 -I /opt/nvidia/deepstream/deepstream-7.1/sources/includes -I /usr/local/include -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opencv4 -o ../build/libline_crossing_render_process.so line_crossing_render_process.cpp -shared -Wl,--no-undefined -L /opt/nvidia/deepstream/deepstream-7.1/lib -lnvds_meta -Wl,-rpath,/opt/nvidia/deepstream/deepstream-7.1/lib -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 -lopencv_stitching -lopencv_alphamat -lopencv_aruco -lopencv_barcode -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dnn_superres -lopencv_dpm -lopencv_face -lopencv_freetype -lopencv_fuzzy -lopencv_hdf -lopencv_hfs -lopencv_img_hash -lopencv_intensity_transform -lopencv_line_descriptor -lopencv_mcc -lopencv_quality -lopencv_rapid -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_shape -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_superres -lopencv_optflow -lopencv_surface_matching -lopencv_tracking -lopencv_highgui -lopencv_datasets -lopencv_text -lopencv_plot -lopencv_ml -lopencv_videostab -lopencv_videoio -lopencv_viz -lopencv_wechat_qrcode -lopencv_ximgproc -lopencv_video -lopencv_xobjdetect -lopencv_objdetect -lopencv_calib3d -lopencv_imgcodecs -lopencv_features2d -lopencv_dnn -lopencv_flann -lopencv_xphoto -lopencv_photo -lopencv_imgproc -lopencv_core
+make: Leaving directory '${PIPEGEN_PROJECT}/pipeline/deepstream/parsers'
+${TEMP}/line_crossing_render_process.cpp: In function ‘bool NvDsCustomPostProcess(NvDsCustomPostProcessFrameInCpu*)’:
+${TEMP}/line_crossing_render_process.cpp:353:27: error: ‘class std::set<std::__cxx11::basic_string<char> >’ has no member named ‘add’
+  353 |         counted_event_ids.add(ev.event_id);
+      |                           ^~~
+make: *** [Makefile:76: ../build/libline_crossing_render_process.so] Error 1
+
+==============================================================================
+[2026-10-18T09:37:17+00:00] repair route (attempt 1/4)
+------------------------------------------------------------------------------
+re-invoking worker 'custom' for job 'line_crossing_render'

@@ -28,6 +28,41 @@ synthetic_running = True
 last_real_ingest = 0.0
 synthetic_tick = 0
 synthetic_task = None
+recorded_run = None
+recorded_run_error = None
+
+def load_recorded_run():
+    global recorded_run, recorded_run_error
+    snapshot=Path(__file__).parents[1]/'evidence'/'pipegen'/'metadata.json'
+    path=os.getenv('PIPEGEN_METADATA_PATH') or (str(snapshot) if snapshot.is_file() else None)
+    if path:
+        try:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('trafficflow_pipegen',Path(__file__).with_name('pipegen.py'))
+            module=importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            RecordedRun=module.RecordedRun
+            recorded_run=RecordedRun(path,DB_PATH)
+        except (OSError,ValueError,KeyError,TypeError) as exc:
+            recorded_run_error=str(exc)
+
+load_recorded_run()
+
+@app.get('/api/pipegen/summary')
+def pipegen_summary():
+    if recorded_run is None:
+        return dict(available=False,error=recorded_run_error,status='metadata_not_loaded')
+    return recorded_run.summary
+
+@app.get('/api/pipegen/frame')
+def pipegen_frame(index:int=0,seconds:float|None=None):
+    if recorded_run is None: raise HTTPException(404,'Recorded metadata unavailable')
+    if seconds is not None:
+        import bisect
+        pts=[(f['pts_ns']-recorded_run.first_pts)/1e9 for f in recorded_run.frames]
+        index=bisect.bisect_right(pts,max(0,seconds))-1
+    return recorded_run.packet(index)
+
 
 def db():
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
@@ -106,13 +141,16 @@ def put_config(kind,key,payload):
         c.execute('INSERT OR REPLACE INTO config VALUES (?,?,?)',(kind,key,json.dumps(payload)))
 
 def lines(camera_id,mode):
+    if mode=='real' and recorded_run is not None:
+        f=recorded_run.frames[0]
+        return [dict(id='counting_line',name='PipeGen counting line',x1=s['points'][0][0]/f['width'],y1=s['points'][0][1]/f['height'],x2=s['points'][1][0]/f['width'],y2=s['points'][1][1]/f['height'],enabled=True) for s in f['shapes'] if s.get('label')=='counting_line' and len(s.get('points',[]))==2]
     return get_config('lines',f'{mode}:{camera_id}',[dict(id='main',name='Main crossing',x1=.08,y1=.5,x2=.92,y2=.5,enabled=True)])
 
 @app.get('/health')
 @app.get('/api/health')
 def health():
     with db() as c: c.execute('SELECT 1')
-    return dict(status='ok',database='ok',real_pipeline_connected=time.monotonic()-last_real_ingest<10,mapping_confirmed=os.getenv('PIPEGEN_MAPPING_CONFIRMED')=='true',synthetic_label='SYNTHETIC MODE — simulated development data')
+    return dict(status='ok',database='ok',recorded_run_available=recorded_run is not None,recorded_run_error=recorded_run_error,real_pipeline_connected=time.monotonic()-last_real_ingest<10,mapping_confirmed=os.getenv('PIPEGEN_MAPPING_CONFIRMED')=='true',synthetic_label='SYNTHETIC MODE — simulated development data')
 
 @app.get('/api/cameras')
 def cameras():
@@ -136,6 +174,7 @@ def get_lines(camera_id: str='intersection-01',mode:Mode='real'):
 
 @app.put('/api/lines')
 def set_lines(value: list[Line],camera_id:str='intersection-01',mode:Mode='real'):
+    if mode=='real' and recorded_run is not None: raise HTTPException(409,'Recorded PipeGen counting line is immutable; edit synthetic mode for testing')
     if len({line.id for line in value})!=len(value): raise HTTPException(422,'Line IDs must be unique')
     payload=[v.model_dump() for v in value]
     put_config('lines',f'{mode}:{camera_id}',payload)
@@ -162,6 +201,7 @@ def normalize(d,frame,mapping):
 
 def process(frame):
     global last_real_ingest
+    if frame.mode=='real' and recorded_run is not None: raise HTTPException(409,'Recorded PipeGen mode uses verified metadata; live ingest disabled for this run')
     if frame.mode=='real' and os.getenv('PIPEGEN_MAPPING_CONFIRMED')!='true': raise HTTPException(409,'Confirm genuine PipeGen class mapping via PIPEGEN_CLASS_MAP and PIPEGEN_MAPPING_CONFIRMED=true')
     try: mapping=DEFAULT_MAP if frame.mode=='synthetic' else {int(k):v for k,v in json.loads(os.getenv('PIPEGEN_CLASS_MAP','{}')).items()}
     except (ValueError,TypeError,AttributeError): raise HTTPException(503,'Invalid PIPEGEN_CLASS_MAP')
@@ -213,6 +253,10 @@ async def ingest(frame:Frame):
 
 @app.get('/api/events')
 def events(mode:Mode='real',camera_id:str='intersection-01',class_name:str|None=None,direction:str|None=None,limit:int=200,since:str|None=None):
+    if mode=='real' and recorded_run is not None:
+        data=[e for e in recorded_run.events if e['camera_id']==camera_id and (not class_name or e['class_name']==class_name) and (not direction or e['crossing_direction']==direction)]
+        if since: raise HTTPException(422,'Recorded run has no UTC timestamps; use frame presentation timestamps')
+        return list(reversed(data))[:max(1,min(limit,10000))]
     sql='SELECT id,payload FROM events WHERE mode=? AND camera_id=?'; args=[mode,camera_id]
     for field,value in [('class_name',class_name),('crossing_direction',direction)]:
         if value: sql+=f' AND {field}=?'; args.append(value)
@@ -223,6 +267,7 @@ def events(mode:Mode='real',camera_id:str='intersection-01',class_name:str|None=
 
 @app.get('/api/stats')
 def stats(mode:Mode='real',camera_id:str='intersection-01'):
+    if mode=='real' and recorded_run is not None and camera_id=='intersection-01': return recorded_run.stats()
     with db() as c:
         rows=c.execute('SELECT class_name,crossing_direction,timestamp FROM events WHERE mode=? AND camera_id=?',(mode,camera_id)).fetchall()
     counts={name:0 for name in CLASSES}; directions={'A→B':0,'B→A':0}; activity={}
@@ -235,7 +280,7 @@ def stats(mode:Mode='real',camera_id:str='intersection-01'):
 def export(mode:Mode='real',camera_id:str='intersection-01',format:Literal['json','csv']='json',class_name:str|None=None,direction:str|None=None):
     data=events(mode,camera_id,class_name,direction,10000)
     if format=='json': return data
-    out=io.StringIO(); fields=['id','timestamp','camera_id','track_id','class_id','class_name','confidence','counting_line_id','crossing_direction','crossing_event_type','mode']
+    out=io.StringIO(); fields=['source','source_event_id','event_id','point','pts_ns','relative_seconds','frame_id','id','timestamp','camera_id','track_id','class_id','class_name','confidence','counting_line_id','crossing_direction','crossing_event_type','mode']
     writer=csv.DictWriter(out,fields,extrasaction='ignore'); writer.writeheader(); writer.writerows(data)
     return Response(out.getvalue(),media_type='text/csv',headers={'Content-Disposition':'attachment; filename="trafficflow-events.csv"'})
 
@@ -249,7 +294,7 @@ def reset():
 @app.websocket('/ws')
 async def websocket(ws:WebSocket,mode:Mode='real',camera_id:str='intersection-01'):
     await ws.accept(); entry=(ws,mode,camera_id); subscribers.add(entry)
-    if mode=='real': await ws.send_json(dict(type='heartbeat',mode='real',status='awaiting_pipeline',stats=stats(mode,camera_id)))
+    if mode=='real': await ws.send_json(dict(type='heartbeat',mode='real',status='recorded_run_ready' if recorded_run is not None else 'awaiting_pipeline',stats=stats(mode,camera_id)))
     # One shared generator per process prevents duplicate counts across viewers.
     global synthetic_task
     if mode=='synthetic' and (synthetic_task is None or synthetic_task.done()):

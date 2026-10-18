@@ -1,40 +1,42 @@
-# PipeGen integration handoff
+# Verified PipeGen integration handoff
 
-Real ingestion is deliberately gated until an actual metadata sample confirms the mapping. No synthetic result is an inference result.
+## Implemented transport
 
-## Capture from the actual configured pipeline
+The completed run is imported read-only from an actual PipeGen `metadata.json` JSON object. Its root fields are `pipeline`, `source`, `min_confidence`, and `frames`. This is a completed-file adapter, not a streaming tailer or an assumed HTTP/MQTT PipeGen integration. `PIPEGEN_METADATA_PATH` selects the original output; the audited snapshot is the default fallback for reproducibility.
 
-- PipeGen version, pipeline export/configuration, detector model labels and class IDs.
-- One raw output message with no credentials, and several consecutive frames for the same tracked object.
-- Supported output transport and delivery semantics. HTTP is implemented; select it only if PipeGen can emit HTTP or use a small external bridge from its verified output. Do not assume MQTT or file output support.
-- Source/camera ID, original source width/height, inference tensor width/height, resize policy, padding offsets, crop/ROI offsets, orientation and timestamps/timebase.
-- Frame ID or presentation timestamp; session/tracker reset identifier.
-- Stable tracker ID, raw class ID/name, confidence, bounding box origin/units/order and reference dimensions.
-- Dropped frames, ID reuse, reconnect/reset semantics and whether messages can arrive out of order.
+## Verified format and mappings
 
-## Canonical HTTP envelope
+Each frame has `frame`, `source_id`, `pts_ns`, `width`, `height`, `objects`, `shapes`, and `fields`. Objects contain numeric `id`, `class_id`, `label`, `confidence`, `tracker_confidence`, and pixel `bbox: {left,top,width,height}`.
 
-POST `/api/ingest` with `mode: "real"`, `camera_id`, `frame_id`, ISO `timestamp`, `width`, `height`, `coordinate_space: "pixels"` or `"normalized"`, and `detections`: `{track_id,class_id,confidence,bounding_box:{x,y,width,height}}`.
+Observed traffic label IDs: 0=`person` (dashboard pedestrian), 1=bicycle, 2=car, 3=motorcycle, 7=truck. No bus object is present. Class labels in the actual pipeline label file include bus at ID 5, but zero bus observations/crossings are reported. Other observed IDs are 9 traffic light, 24 backpack, 26 handbag. Nontraffic detections remain visible in evidence and detection totals and do not contribute to traffic crossing counters.
 
-Coordinates must describe the original visible source frame. For letterboxing: source_x=(inference_x-padding_x)/scale_x and source_y=(inference_y-padding_y)/scale_y; apply crop offsets and rotate before normalization. Width/height use the same scales. For stretched inference, use separate x/y scales. Never normalize directly against tensor dimensions when padding/cropping is present. The browser renders a matching video aspect ratio and normalized overlays.
+The adapter preserves tracking ID0 and all source labels. Source boxes are already at 1280×720; dividing x/width by 1280 and y/height by 720 gives normalized geometry shared by the display and source counting line. No inference-tensor dimensions or crop transform are guessed.
 
-After verifying labels, configure `PIPEGEN_CLASS_MAP` as JSON mapping raw numeric IDs to canonical names: car, bus, truck, motorcycle, bicycle, pedestrian; set `PIPEGEN_MAPPING_CONFIRMED=true`. The development default mapping is only for synthetic testing. Inspect `/api/health` and backend schema at `/docs` before connecting the bridge.
+## Authoritative crossing records
 
-Backend-generated crossing records include timestamp, camera_id, frame_id, track_id, class_id, class_name, confidence, bounding_box, counting_line_id, crossing_direction and crossing_event_type. Never send a count for every detection; submit tracked frames and let the crossing engine establish transitions.
+For `n` in `[0,num_events)`, `fields` contains `event_n_id`, `event_n_track_id`, `event_n_label`, `event_n_direction`, `event_n_ix`, `event_n_iy`. These are direct source events. Directions are `left_to_right` / `right_to_left`. Per-class cumulative fields use `_l2r` and `_r2l`, plus `total_crossings`. Matching event polylines are present in `shapes`.
 
-## Counting limitations
+The importer validates all 900 frames: explicit event class/direction counts must match cumulative differences and crossing shapes; total counters must match their per-class sums. Any mismatch rejects the run. Events are saved to separate SQLite recorded-run tables keyed by source SHA256 and index; repeated imports do not add crossings.
 
-Counting uses bbox centers, a deadband around each finite line, and per-track state. A new ID starts a new trajectory and cannot be matched reliably to a prior ID. Lost detections, occlusion and tracker resets may miss crossings; ID reuse may corrupt identity. Clear/reset tracking state at pipeline restarts, use a new session-prefixed ID, and verify representative clips before trusting totals. A camera or line edit requires fresh trajectory state. Counts are operational telemetry, not ground truth.
+Crossing `class_id` is joined only from a matching track/label object in the same frame. Event confidence is absent and remains null; object confidence remains a detection measurement. Event IDs and track IDs are retained. The source supplies one counting line `(640,100)`→`(640,620)`; recorded mode renders it read-only. Editing synthetic lines cannot change this run.
 
-## Remaining acceptance checklist
+## Time and identity limits
 
-1. Restore working GPU/driver and authorized Docker access outside this application.
-2. Run the actual DeepStream tracker and collect the metadata above.
-3. Confirm classes, geometry and transport; implement only necessary raw-to-canonical bridge.
-4. Align frame PTS and overlays with the displayed video. The current demo video is an independent sample; synthetic tracks are unrelated to its imagery.
-5. Replay labeled crossings and compare directions, missed counts, duplicate counts and reconnect behavior.
-6. Configure durable deployment, authentication and access restrictions before exposing ingestion beyond localhost.
+`pts_ns` is a presentation timestamp, not UTC. Relative video time is `(pts_ns-first_pts_ns)/1e9`, with first PTS 66,666,666ns. The original video path is corroborated by the generated pipeline script and sanitized Pipeline IR; the metadata root `source` is empty. Source matching and hash are recorded in evidence. Playback frame selection follows the verified constant PTS offset; this is not a live feed.
 
-### Optional verified inference-coordinate transform
+Tracks are tracker identities, not guaranteed physical objects. This run contains 130 IDs,122 in traffic classes. Repeated frame observations must not be called distinct vehicles. Classification or ID changes, occlusion and resets can affect model/pipeline counts. This adapter reports supplied pipeline results and does not establish ground truth.
 
-The HTTP adapter also accepts `coordinate_space: "inference"` with `inference_transform: {scale_x,scale_y,padding_x,padding_y,crop_x,crop_y}`. Frame `width`/`height` remain the original source dimensions. It removes tensor padding, reverses x/y scale, applies source crop offsets, then normalizes. Out-of-frame boxes and missing transforms are rejected. Rotation must be resolved before ingestion. Example: a 1280×720 source letterboxed into 640×640 uses scale_x=scale_y=0.5, padding_x=0, padding_y=140, crop offsets 0. Do not use that example unless it matches the actual preprocessing.
+## API
+
+- `GET /api/pipegen/summary`: run totals, label observations/track counts, hash, timestamps, gaps and source events.
+- `GET /api/pipegen/frame?index=20` or `?seconds=0.7`: normalized recorded detections and cumulative frame statistics.
+- `GET /api/stats?mode=real`: final recorded-run crossing totals.
+- `GET /api/events?mode=real`: native source events, with class/direction filtering.
+- `GET /api/export?mode=real&format=json|csv`: filtered source event export.
+- Existing synthetic REST/WebSocket functionality remains separate.
+
+While a recorded run is loaded, live real ingestion and real line edits are rejected to prevent mixing recomputed events with authoritative run counts.
+
+## Remaining work
+
+This requested completed-run integration is functional. A continuously running live bridge would require confirming an actual PipeGen streaming transport, handling file rollover/tracker sessions and testing ordering/reconnect behavior. Do not describe this recorded-file import as live ingestion. Remote hosting needs authentication and a deployment access policy; local service binds loopback and uses a single worker. No model retraining or GPU/Docker changes were made.

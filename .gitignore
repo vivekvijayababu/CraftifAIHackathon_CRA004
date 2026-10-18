@@ -11,3 +11,5 @@ media/
 *.log
 
 .venv
+
+!evidence/pipegen/*.log

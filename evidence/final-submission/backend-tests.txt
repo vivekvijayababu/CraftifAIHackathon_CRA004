@@ -1,0 +1,2 @@
+17 passed, 1 upstream Starlette/httpx TestClient deprecation warning in 0.86s
+TypeScript noEmit check: exit 0

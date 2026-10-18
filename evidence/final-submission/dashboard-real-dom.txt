@@ -1,0 +1,355 @@
+- complementary:
+  - generic: ↗
+  - generic "Operations": ▦
+  - generic "Video analytics": ◉
+  - generic "Counting lines": ⌁
+  - generic "Connection status": ⚙
+- main:
+  - generic: INTERSECTION INTELLIGENCE
+  - heading "TrafficFlow AI" [level=1]
+  - generic: ● Backend connected
+  - combobox "Data mode":
+    - option "Recorded PipeGen run · Real data" [selected]
+    - option "Synthetic development"
+  - generic: ● RECORDED PIPEGEN RUN
+  - generic: 900 frames · 29.97s · YOLOv8m TensorRT FP16
+  - generic: Full-run aggregate counters · playback overlays follow video time
+  - heading "Intersection overview" [level=2]
+  - paragraph: Movement, crossings, and operational awareness.
+  - combobox "Filter object class":
+    - option "All object classes" [selected]
+    - option "car"
+    - option "bus"
+    - option "truck"
+    - option "motorcycle"
+    - option "bicycle"
+    - option "pedestrian"
+  - combobox "Filter direction":
+    - option "All directions" [selected]
+    - option "Left → right"
+    - option "Right → left"
+  - link "↓ CSV":
+    - /url: /api/export?mode=real&format=csv
+  - link "↓ JSON":
+    - /url: /api/export?mode=real&format=json
+  - article:
+    - generic: TOTAL CROSSINGS
+    - strong: "28"
+    - text: Recorded cumulative counters
+  - article:
+    - generic: CARS
+    - strong: "20"
+    - text: line crossings
+  - article:
+    - generic: BUSES
+    - strong: "0"
+    - text: line crossings
+  - article:
+    - generic: TRUCKS
+    - strong: "0"
+    - text: line crossings
+  - article:
+    - generic: MOTORCYCLES
+    - strong: "3"
+    - text: line crossings
+  - article:
+    - generic: BICYCLES
+    - strong: "0"
+    - text: line crossings
+  - article:
+    - generic: PEDESTRIANS
+    - strong: "5"
+    - text: line crossings
+  - heading "Recorded detection evidence" [level=3]
+  - generic: Repeated frame observations; class track IDs may overlap after classification changes
+  - strong: 7,857
+  - generic: Detection observations
+  - strong: "130"
+  - generic: Distinct tracking IDs
+  - strong: "899"
+  - generic: traffic light observations · 1 track IDs
+  - strong: "3748"
+  - generic: car observations · 94 track IDs
+  - strong: "1717"
+  - generic: person observations · 17 track IDs
+  - strong: "739"
+  - generic: bicycle observations · 3 track IDs
+  - strong: "259"
+  - generic: truck observations · 4 track IDs
+  - strong: "295"
+  - generic: handbag observations · 6 track IDs
+  - strong: "188"
+  - generic: motorcycle observations · 4 track IDs
+  - strong: "12"
+  - generic: backpack observations · 1 track IDs
+  - heading "Intersection camera" [level=3]
+  - generic: intersection-01 · Frame 58 · PTS 2000000000 ns
+  - generic: ● RECORDED REPLAY
+  - text: RECORDED PIPEGEN
+  - generic: ●
+  - text: Video source URL
+  - textbox "Video source URL":
+    - /placeholder: /media/sample.mp4 or a camera playback URL
+    - text: /media/sample.mp4
+  - generic: Recorded video playback · normalized source boxes · frame selection uses source PTS offset.
+  - generic: 1 virtual counting lines configured
+  - button "⌁ Source line · read-only" [disabled]
+  - text: PipeGen counting line
+  - button "Delete PipeGen counting line" [disabled]: ×
+  - heading "Traffic composition" [level=3]
+  - generic: By class
+  - strong: "28"
+  - generic: crossings
+  - generic: car
+  - generic: 71%
+  - generic: bus
+  - generic: 0%
+  - generic: truck
+  - generic: 0%
+  - generic: motorcycle
+  - generic: 11%
+  - generic: bicycle
+  - generic: 0%
+  - generic: pedestrian
+  - generic: 18%
+  - generic: Counts reflect line crossings, not unique objects in frame.
+  - heading "Traffic activity" [level=3]
+  - generic: Recorded source time
+  - 'generic "0: 1"'
+  - 'generic "1: 1"'
+  - 'generic "2: 1"'
+  - 'generic "5: 1"'
+  - 'generic "12: 2"'
+  - 'generic "13: 3"'
+  - 'generic "14: 1"'
+  - 'generic "15: 1"'
+  - 'generic "16: 1"'
+  - 'generic "17: 1"'
+  - 'generic "18: 3"'
+  - 'generic "19: 2"'
+  - 'generic "20: 1"'
+  - 'generic "21: 1"'
+  - 'generic "22: 1"'
+  - 'generic "24: 3"'
+  - 'generic "25: 1"'
+  - 'generic "28: 1"'
+  - 'generic "29: 2"'
+  - generic: Earlier
+  - generic: Latest
+  - heading "Directional movement" [level=3]
+  - generic: All lines
+  - generic: ↗ left_to_right
+  - strong: "24"
+  - generic: ↗ right_to_left
+  - strong: "4"
+  - generic: Native left_to_right / right_to_left counters; no inferred direction events.
+  - heading "Recent crossing events 28" [level=3]
+  - generic: Counter increments from recorded metadata
+  - table:
+    - rowgroup:
+      - row "SOURCE TIME (SECONDS) OBJECT CLASS TRACK ID COUNTING LINE DIRECTION CAMERA":
+        - columnheader "SOURCE TIME (SECONDS)"
+        - columnheader "OBJECT CLASS"
+        - columnheader "TRACK ID"
+        - columnheader "COUNTING LINE"
+        - columnheader "DIRECTION"
+        - columnheader "CAMERA"
+    - rowgroup:
+      - 'row "29.467s pedestrian #128 counting_line left_to_right intersection-01"':
+        - cell "29.467s"
+        - cell "pedestrian": pedestrian
+        - cell "#128"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "29.467s motorcycle #127 counting_line left_to_right intersection-01"':
+        - cell "29.467s"
+        - cell "motorcycle": motorcycle
+        - cell "#127"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "28.900s car #124 counting_line left_to_right intersection-01"':
+        - cell "28.900s"
+        - cell "car": car
+        - cell "#124"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "25.300s car #110 counting_line left_to_right intersection-01"':
+        - cell "25.300s"
+        - cell "car": car
+        - cell "#110"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "24.733s car #114 counting_line right_to_left intersection-01"':
+        - cell "24.733s"
+        - cell "car": car
+        - cell "#114"
+        - cell "counting_line"
+        - cell "right_to_left"
+        - cell "intersection-01"
+      - 'row "24.200s car #99 counting_line left_to_right intersection-01"':
+        - cell "24.200s"
+        - cell "car": car
+        - cell "#99"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "24.200s car #101 counting_line left_to_right intersection-01"':
+        - cell "24.200s"
+        - cell "car": car
+        - cell "#101"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "22.633s car #88 counting_line left_to_right intersection-01"':
+        - cell "22.633s"
+        - cell "car": car
+        - cell "#88"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "21.700s car #81 counting_line left_to_right intersection-01"':
+        - cell "21.700s"
+        - cell "car": car
+        - cell "#81"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "20.767s car #82 counting_line right_to_left intersection-01"':
+        - cell "20.767s"
+        - cell "car": car
+        - cell "#82"
+        - cell "counting_line"
+        - cell "right_to_left"
+        - cell "intersection-01"
+      - 'row "19.967s car #79 counting_line left_to_right intersection-01"':
+        - cell "19.967s"
+        - cell "car": car
+        - cell "#79"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "19.600s car #67 counting_line left_to_right intersection-01"':
+        - cell "19.600s"
+        - cell "car": car
+        - cell "#67"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "18.700s car #69 counting_line right_to_left intersection-01"':
+        - cell "18.700s"
+        - cell "car": car
+        - cell "#69"
+        - cell "counting_line"
+        - cell "right_to_left"
+        - cell "intersection-01"
+      - 'row "18.000s car #51 counting_line left_to_right intersection-01"':
+        - cell "18.000s"
+        - cell "car": car
+        - cell "#51"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "18.000s car #50 counting_line left_to_right intersection-01"':
+        - cell "18.000s"
+        - cell "car": car
+        - cell "#50"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "17.300s car #53 counting_line left_to_right intersection-01"':
+        - cell "17.300s"
+        - cell "car": car
+        - cell "#53"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "16.400s car #41 counting_line left_to_right intersection-01"':
+        - cell "16.400s"
+        - cell "car": car
+        - cell "#41"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "15.567s car #35 counting_line left_to_right intersection-01"':
+        - cell "15.567s"
+        - cell "car": car
+        - cell "#35"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "14.400s pedestrian #17 counting_line right_to_left intersection-01"':
+        - cell "14.400s"
+        - cell "pedestrian": pedestrian
+        - cell "#17"
+        - cell "counting_line"
+        - cell "right_to_left"
+        - cell "intersection-01"
+      - 'row "13.700s pedestrian #19 counting_line left_to_right intersection-01"':
+        - cell "13.700s"
+        - cell "pedestrian": pedestrian
+        - cell "#19"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "13.600s pedestrian #31 counting_line left_to_right intersection-01"':
+        - cell "13.600s"
+        - cell "pedestrian": pedestrian
+        - cell "#31"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "13.600s motorcycle #30 counting_line left_to_right intersection-01"':
+        - cell "13.600s"
+        - cell "motorcycle": motorcycle
+        - cell "#30"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "12.800s pedestrian #28 counting_line left_to_right intersection-01"':
+        - cell "12.800s"
+        - cell "pedestrian": pedestrian
+        - cell "#28"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "12.800s motorcycle #27 counting_line left_to_right intersection-01"':
+        - cell "12.800s"
+        - cell "motorcycle": motorcycle
+        - cell "#27"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "5.167s car #7 counting_line left_to_right intersection-01"':
+        - cell "5.167s"
+        - cell "car": car
+        - cell "#7"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "2.233s car #3 counting_line left_to_right intersection-01"':
+        - cell "2.233s"
+        - cell "car": car
+        - cell "#3"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "1.600s car #8 counting_line left_to_right intersection-01"':
+        - cell "1.600s"
+        - cell "car": car
+        - cell "#8"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+      - 'row "0.667s car #2 counting_line left_to_right intersection-01"':
+        - cell "0.667s"
+        - cell "car": car
+        - cell "#2"
+        - cell "counting_line"
+        - cell "left_to_right"
+        - cell "intersection-01"
+  - generic: TRAFFICFLOW AI · OPERATIONS CONSOLE
+  - generic: Recorded source events and counters · PTS time; wall-clock timestamps absent.

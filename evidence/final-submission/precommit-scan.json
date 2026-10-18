@@ -1,0 +1,36 @@
+{
+  "scope": "all tracked and staged source/evidence files before final commit",
+  "files_checked": 74,
+  "patterns_checked": [
+    "private_home_path",
+    "github_token",
+    "private_key",
+    "aws_access_key",
+    "credential_assignment"
+  ],
+  "matches": [],
+  "files_over_10MiB": [],
+  "largest_files": [
+    {
+      "file": "evidence/pipegen/metadata.json",
+      "bytes": 2462702
+    },
+    {
+      "file": "evidence/dashboard-real-run.jpg",
+      "bytes": 313357
+    },
+    {
+      "file": "evidence/final-submission/dashboard-real-full.jpg",
+      "bytes": 255795
+    },
+    {
+      "file": "evidence/dashboard-synthetic-isolation.jpg",
+      "bytes": 212035
+    },
+    {
+      "file": "evidence/pipegen/tensorrt-compile.sanitized.json",
+      "bytes": 186188
+    }
+  ],
+  "weights_video_keys_excluded": true
+}

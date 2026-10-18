@@ -1,0 +1,21 @@
+{
+  "model": "YOLOv8m",
+  "engine": "yolov8m.fp16.plan",
+  "engine_bytes": 64634652,
+  "engine_sha256": "a8b2b6ebbfd04a997467ccb669d3933958edf2e561579067e54acc68d3fe3ef2",
+  "tensorRT": "10.3.0",
+  "input_shape": [
+    1,
+    3,
+    480,
+    640
+  ],
+  "build_precision": "FP16",
+  "observed_layer_precision": {
+    "FP16": 170,
+    "FP32": 19
+  },
+  "device_as_recorded": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "weights_in_repository": false,
+  "note": "Weights/engine, compiled shared libraries, timing cache and key files intentionally excluded. Original exported engine is retained by the owner. Consult recorded speed evidence; no benchmark rerun."
+}

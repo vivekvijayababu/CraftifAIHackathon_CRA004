@@ -1,0 +1,47 @@
+{
+  "url": "http://127.0.0.1:8004",
+  "checks": {
+    "events_and_filtered_exports": "passed;28 events,4 right_to_left,5 pedestrian;source IDs preserved",
+    "replay_no_count_mutation": "passed",
+    "real_websocket": "recorded_run_ready",
+    "synthetic_isolation": "passed; six classes and increasing synthetic crossings,real stays28",
+    "/": {
+      "status": 200,
+      "bytes": 417
+    },
+    "/docs": {
+      "status": 200,
+      "bytes": 1013
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 211
+    },
+    "/media/sample.mp4": {
+      "status": 200,
+      "bytes": 5316950
+    },
+    "original_source_unchanged": "SHA256 unchanged",
+    "sqlite_idempotent_event_count": 28
+  },
+  "summary": {
+    "sha256": "51f80e7a468d185c628b6bc52168efb37aa43c20fcbcc28586e7286a6c223f30",
+    "frame_count": 900,
+    "detection_observations": 7857,
+    "traffic_detection_observations": 6651,
+    "unique_track_ids": 130,
+    "counts": {
+      "car": 20,
+      "bus": 0,
+      "truck": 0,
+      "motorcycle": 3,
+      "bicycle": 0,
+      "pedestrian": 5
+    },
+    "directions": {
+      "left_to_right": 24,
+      "right_to_left": 4
+    },
+    "total_crossings": 28
+  }
+}

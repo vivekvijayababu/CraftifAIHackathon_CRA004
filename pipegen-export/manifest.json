@@ -1,0 +1,83 @@
+{
+  "scope": "Sanitized generated PipeGen pipeline sources/configuration, not an unmodified binary model bundle",
+  "files": [
+    {
+      "source_relative": "pipeline/deepstream/configs/config_det_pgie.txt",
+      "source_sha256": "9451ce68601ca84416d83a6257daa70ebe031dbe716989d00fb99823a327f2cf",
+      "export_sha256": "c21307c6a93bbb21bea9f5fb92e49ba9f04e2d91c8cfe240b5cdc6de7b33e06e",
+      "sanitized": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/configs/config_tracker.yml",
+      "source_sha256": "0f0b354a442a560caaf423b5d38bc87caba403052478262709227afaa0ddf5b4",
+      "export_sha256": "0f0b354a442a560caaf423b5d38bc87caba403052478262709227afaa0ddf5b4",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/labels/config_det_pgie_labels.txt",
+      "source_sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a",
+      "export_sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/run.sh",
+      "source_sha256": "890c515e7df9b60f6301447166d3348fa96a052d8681c21fae78fed6a557e31e",
+      "export_sha256": "bdc7167f286e04ca68dcf18b13cae49fc3c6b573ea08861b5ebcd908e9dc2193",
+      "sanitized": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/meta_json.cpp",
+      "source_sha256": "b14192683f69534d95bee8de50bf89fab9afe2d202b0cfe982f4303311ad085b",
+      "export_sha256": "b14192683f69534d95bee8de50bf89fab9afe2d202b0cfe982f4303311ad085b",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/frame_json.h",
+      "source_sha256": "e75ffe4ce7deb3bda446e4c7c45773487b5c6125164e2fc39f8e1d672f291ab8",
+      "export_sha256": "e75ffe4ce7deb3bda446e4c7c45773487b5c6125164e2fc39f8e1d672f291ab8",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/event_sink.h",
+      "source_sha256": "decb7afb63c1be02ef4309f25f12bf26401c5cdaedb56327e961ddece02cdd4c",
+      "export_sha256": "decb7afb63c1be02ef4309f25f12bf26401c5cdaedb56327e961ddece02cdd4c",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/render_meta.h",
+      "source_sha256": "65f502a7f4d05bcd96a361fe742ec706769995013b366d43c973b91f9dd2c6df",
+      "export_sha256": "65f502a7f4d05bcd96a361fe742ec706769995013b366d43c973b91f9dd2c6df",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/shape_json.h",
+      "source_sha256": "dff0729addfe034cbdc77d03ea5cd3800bb260c99a682e7ede392cbde9188468",
+      "export_sha256": "dff0729addfe034cbdc77d03ea5cd3800bb260c99a682e7ede392cbde9188468",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/vms_detect.cpp",
+      "source_sha256": "c98ea763a89b35c442480c0f17914090dabc17d8508859855a2ddc76f0924203",
+      "export_sha256": "c98ea763a89b35c442480c0f17914090dabc17d8508859855a2ddc76f0924203",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/config_det_pgie_parser.cpp",
+      "source_sha256": "a24413ea6fd9f1abc111688943aeeb4f249322fe5104e6775fab48d398e28335",
+      "export_sha256": "a24413ea6fd9f1abc111688943aeeb4f249322fe5104e6775fab48d398e28335",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/line_crossing_render_process.cpp",
+      "source_sha256": "6ea4ced3e30b7a60753b5caa097a9670084a5967fed012edd12efc30f69e2bf9",
+      "export_sha256": "6ea4ced3e30b7a60753b5caa097a9670084a5967fed012edd12efc30f69e2bf9",
+      "sanitized": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/Makefile",
+      "source_sha256": "49b0a294a21a68f559cf4b937a4dd069f6aec533ea63b262dd6c1cec60896f37",
+      "export_sha256": "49b0a294a21a68f559cf4b937a4dd069f6aec533ea63b262dd6c1cec60896f37",
+      "sanitized": false
+    }
+  ]
+}

@@ -98,3 +98,9 @@ pnpm build
 Local source repository is prepared with sanitized evidence and reproducible real metadata. No private account files, credentials, model weights, video binaries or host-specific paths are committed. No remote is configured and no public publication or unverified push has occurred.
 
 Use a single backend worker and loopback binding for this local submission. Authentication and ordered live multi-camera deployment remain future deployment work. The imported run and benchmark are genuine supplied artifacts; this integration did not retrain, rerun GPU benchmarking, modify PipeGen outputs or change GPU/Docker configuration.
+
+## Hackathon submission package
+
+`pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Fresh final dashboard screenshots, build output and verification status are in `evidence/final-submission/`.
+
+The official PipeGen IR UI screenshot is missing; actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are included. GitHub push awaits the exact authorized target repository; the connected account currently exposes only an unrelated repository, which was not modified. No hackathon portal submission has been claimed.

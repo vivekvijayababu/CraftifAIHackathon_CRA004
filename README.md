@@ -41,7 +41,7 @@ cd ..
 ./scripts/run.sh
 ```
 
-Open **http://127.0.0.1:8004**. The single backend serves the built frontend. API explorer: http://127.0.0.1:8004/docs.
+Open **http://127.0.0.1:8005**. The single backend serves the built frontend. API explorer: http://127.0.0.1:8005/docs.
 
 The audited metadata snapshot in `evidence/pipegen/metadata.json` makes the recorded run reproducible without private directories. To load the original read-only output instead:
 
@@ -51,17 +51,19 @@ PIPEGEN_METADATA_PATH=/absolute/path/to/output/metadata.json ./scripts/run.sh
 
 Keep machine-specific values in the shell or an ignored local environment file. `PORT` changes the backend port. SQLite files are created locally and ignored by Git. Imports are idempotent by SHA256 and event index.
 
-For frontend development, keep the backend running and use `cd frontend && pnpm dev`. Vite proxies requests to port 8004.
+For frontend development, keep the backend running and use `cd frontend && pnpm dev`. Vite proxies requests to port 8005.
 
 The licensed video is excluded from Git. On the prepared host it is available in `media/`; a fresh checkout needs the clip described in `docs/VIDEO_PROVENANCE.md`. `TRAFFICFLOW_VIDEO` can point to that verified source clip. Video is independent of engine/model weights, which are also excluded.
 
 ## Demo
 
-1. Open real mode. Inspect the recorded source badge, 28 run-total crossings, native directions and per-class observation/track totals.
-2. Play or seek the video to view source bounding boxes selected by metadata PTS. Run totals stay labeled separately from frame playback state.
-3. Filter the crossing timeline by class/direction; inspect genuine track IDs and relative crossing timestamps; export CSV/JSON.
-4. Inspect the source counting line. Real geometry comes from the pipeline and is read-only in this dashboard.
-5. Switch to **SYNTHETIC MODE** to test editable lines, moving simulated tracks and WebSocket counters. Synthetic records never enter the recorded run.
+1. Open real mode: **Simulated USB Camera — Demo Mode** starts the recorded intersection replay at 1× speed. The feed is explicitly labeled **SIMULATED CAMERA — RECORDED REPLAY**.
+2. Start, pause, restart or seek. Genuine detections, observations, charts and crossing history follow the video timestamp; replay does not create events.
+3. Select **Recorded Video — Stable Mode** above the feed for the original full-run statistics and playback experience. Replay failures switch here automatically with an explanatory message.
+4. Select **USB Camera — Future Hardware** to check device availability. Physical camera inference is not implemented or claimed.
+5. Filter and export crossing history. Replay exports include only events reached in playback. Synthetic development mode remains separate.
+
+See [camera mode and rollback guide](docs/SIMULATED_CAMERA.md) and [verification evidence](evidence/camera-replay/VERIFICATION.md).
 
 ## Architecture
 

@@ -64,6 +64,36 @@ def pipegen_frame(index:int=0,seconds:float|None=None):
     return recorded_run.packet(index)
 
 
+replay_index = None
+
+def get_replay_index():
+    global replay_index
+    if recorded_run is None:
+        raise HTTPException(503, 'Recorded replay unavailable; use Recorded Video')
+    if replay_index is None or replay_index.run is not recorded_run:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('trafficflow_replay', Path(__file__).with_name('replay.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        replay_index = module.ReplayIndex(recorded_run)
+    return replay_index
+
+from fastapi import Query
+
+@app.get('/api/replay')
+def replay_frame(seconds: float = Query(default=0, ge=0, allow_inf_nan=False)):
+    return get_replay_index().packet(seconds)
+
+@app.get('/api/replay/export')
+def replay_export(seconds: float = Query(default=0, ge=0, allow_inf_nan=False),
+                  format: Literal['json','csv']='json', class_name: str | None=None,
+                  direction: str | None=None):
+    replay = get_replay_index()
+    if format == 'json': return replay.events(seconds, class_name, direction)
+    return Response(replay.csv(seconds, class_name, direction), media_type='text/csv',
+                    headers={'Content-Disposition': 'attachment; filename="trafficflow-replay-events.csv"'})
+
+
 def db():
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
     c = sqlite3.connect(DB_PATH)

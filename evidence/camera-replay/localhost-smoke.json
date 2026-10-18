@@ -1,0 +1,53 @@
+{
+  "url": "http://127.0.0.1:8005",
+  "checks": {
+    "0": {
+      "crossings": 0,
+      "traffic_observations": 0,
+      "frame": 0
+    },
+    "0.667": {
+      "crossings": 1,
+      "traffic_observations": 134,
+      "frame": 20
+    },
+    "5": {
+      "crossings": 3,
+      "traffic_observations": 881,
+      "frame": 150
+    },
+    "15": {
+      "crossings": 10,
+      "traffic_observations": 2650,
+      "frame": 450
+    },
+    "30": {
+      "crossings": 28,
+      "traffic_observations": 6651,
+      "frame": 899
+    },
+    "pause_repeat_restart": "Identical snapshots, reset to0, final28 without duplication",
+    "exports": {
+      "15s_csv_rows": 10,
+      "final_right_to_left_rows": 4
+    },
+    "/": {
+      "status": 200,
+      "bytes": 417
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 211
+    },
+    "/media/sample.mp4": {
+      "status": 200,
+      "bytes": 5316950
+    },
+    "/api/pipegen/frame?index=20": {
+      "status": 200,
+      "bytes": 3572
+    },
+    "metadata_original_hash": "unchanged",
+    "sqlite_recorded_events": 28
+  }
+}

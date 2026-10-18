@@ -1,3 +1,5 @@
+> Historical pre-replay capture report; current screenshots and submission status are documented in [current-dashboard/README.md](current-dashboard/README.md). The prior missing-IR and pending-GitHub statements below describe the historical checkpoint, not the current repository.
+
 # Final verification evidence
 
 Root browser access verified the running dashboard at http://127.0.0.1:8004 on 18 October 2026. Fresh real-run viewport/full-page and native direction-filter screenshots are saved here, together with the visible DOM. Right-to-left filtering returned four actual events (tracks114,82,69,17); clearing the filter restored all28. Visible totals matched source: car20,person5,motorcycle3;7,857observations,130IDs. No browser error-level log entries were returned. Source playback was advancing and overlay frame/track IDs changed between observations.

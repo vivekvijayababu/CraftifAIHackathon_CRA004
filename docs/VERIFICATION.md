@@ -1,3 +1,9 @@
+# Verification record
+
+Current documentation audit: [current dashboard evidence](../evidence/final-submission/current-dashboard/README.md). Latest rerun: 20 backend tests passed, TypeScript and production build passed at source commit `691a4ad`. The app runs on port 8005. The official IR screenshot is now present; the feature branch is pushed. Export completeness remains unresolved.
+
+## Historical integration results (before camera replay and final styling)
+
 # Final integration verification — 18 October 2026
 
 ## Executed results
@@ -17,4 +23,4 @@ This is a **completed recorded run**, not a live pipeline. UTC capture timestamp
 
 The byte-identical metadata snapshot and sanitized Pipeline IR/benchmark/run evidence make this reproducible without private directories. Original PipeGen output, model, GPU/Docker and system configuration were not changed. Private accounts and absolute host paths were excluded from tracked evidence; source video and weights are excluded.
 
-Local Git submission is prepared. No verified GitHub remote was supplied; connected tools lack repository creation. No remote push or publication occurred. Service uses one worker and loopback. Live transport, authentication and remote deployment remain separate future work.
+At this historical checkpoint no remote push had occurred. This has been superseded by the feature-branch publication documented above. Service uses one worker and loopback. Live transport, authentication and remote deployment remain separate future work.

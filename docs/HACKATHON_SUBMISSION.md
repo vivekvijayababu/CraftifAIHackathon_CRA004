@@ -12,8 +12,12 @@ The application distinguishes a **recorded real PipeGen run** from an isolated s
 
 Included: source, tests, setup instructions, model hash/information, sanitized PipeGen IR/configuration/parser export, genuine metadata snapshot, benchmark/run evidence and dashboard screenshots. Model weights, engine binaries, private paths and credentials are excluded.
 
-Local demonstration: http://127.0.0.1:8004
+Local demonstration: http://127.0.0.1:8005
 
-GitHub URL: pending the owner's exact authorized repository URL. No remote push has occurred. No hackathon submission portal was supplied, so this description is ready to paste rather than claimed submitted.
+GitHub: https://github.com/vivekvijayababu/CraftifAIHackathon_CRA004/tree/feature/simulated-usb-camera (the original TrafficFlow-AI URL redirects here). The feature branch has been pushed; no main merge or portal submission is claimed.
 
-Missing evidence: official Pipeline IR UI screenshot. Actual sanitized IR JSON is included; no substitute image is labeled official.
+The current white/black dashboard uses blue graph accents and larger typography. Simulated USB Camera is the primary recorded replay: start/pause/restart/seek drive genuine progressive metadata, charts and events. Recorded Video remains a stable full-run fallback. Hardware checking does not implement physical USB AI inference.
+
+Current screenshots: [overview](../evidence/final-submission/current-dashboard/overview.jpg), [replay](../evidence/final-submission/current-dashboard/simulated-replay.jpg). The genuine supplied [IR node graph](../evidence/pipegen/pipeline-ir-graph.png) is included. Twenty backend tests, TypeScript and production build passed during the latest documentation audit.
+
+Remaining blocker: pipegen-export is a sanitized subset. Supply the complete official Export Project download or an accepted project link; see [completeness audit](../pipegen-export/EXPORT_COMPLETENESS.md). No hackathon portal submission was performed.

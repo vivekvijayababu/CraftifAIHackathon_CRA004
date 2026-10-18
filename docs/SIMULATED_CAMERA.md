@@ -1,6 +1,6 @@
 # Simulated camera demo
 
-The default real-data source replays the existing 30-second, 30 FPS intersection MP4 at 1×. It is labeled **SIMULATED CAMERA — RECORDED REPLAY** and never described as physical live inference. The dark two-column interface keeps statistics on the left and the prominent video and source selector on the right.
+The default real-data source replays the existing 30-second, 30 FPS intersection MP4 at 1×. It is labeled **SIMULATED CAMERA — RECORDED REPLAY** and never described as physical live inference. The white/light two-column interface with black text, muted blue chart accents and enlarged typography keeps statistics on the left and the prominent video and source selector on the right.
 
 The browser video clock selects the latest genuine PipeGen frame by relative presentation timestamp. The backend returns cumulative observations, tracker identities and explicit crossing events through that frame. Repeated requests are read-only; pause holds the timestamp, restart returns to zero, and seeking reconstructs the prefix without inserting events. Original PipeGen timestamps are relative, not UTC capture times.
 

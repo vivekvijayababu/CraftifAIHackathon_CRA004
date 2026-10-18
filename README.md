@@ -4,7 +4,7 @@ TrafficFlow AI connects a completed PipeGen/DeepStream run to a React + TypeScri
 
 ## Final application
 
-The current implementation is on [`feature/simulated-usb-camera`](https://github.com/vivekvijayababu/TrafficFlow-AI/tree/feature/simulated-usb-camera). It includes the genuine PipeGen integration, playback-synchronized camera demo, safe Recorded Video fallback, and the final **white interface with black text, blue chart accents and larger typography**. The latest visual update increased dashboard, control and chart text by 3 pixels while preserving functionality.
+The current implementation is on [`feature/simulated-usb-camera`](https://github.com/vivekvijayababu/CraftifAIHackathon_CRA004/tree/feature/simulated-usb-camera). It includes the genuine PipeGen integration, playback-synchronized camera demo, safe Recorded Video fallback, and the final **white interface with black text, blue chart accents and larger typography**. The latest visual update increased dashboard, control and chart text by 3 pixels while preserving functionality.
 
 - **Primary demo:** a 30-second intersection MP4 replay at its original 30 FPS, explicitly labeled as recorded replay.
 - **Progressive analytics:** source detections, bounding boxes, tracker IDs, class observations, directional crossings and event history follow playback time.
@@ -79,9 +79,17 @@ See [camera mode and rollback guide](docs/SIMULATED_CAMERA.md) and [verification
 
 ## Working TrafficFlow AI application
 
-![TrafficFlow AI showing genuine recorded traffic analytics](evidence/final-submission/dashboard-real-full.jpg)
+![Current TrafficFlow AI white dashboard with genuine replay results](evidence/final-submission/current-dashboard/overview.jpg)
 
-This captured working application shows the genuine recorded PipeGen integration. It predates the final white/black styling and camera source selector; it is retained as execution evidence, not a screenshot of the latest visual design. [Browser verification](evidence/camera-replay/VERIFICATION.md) records playback and fallback checks.
+Captured from the running application at source commit `691a4ad`: white surfaces, black typography, blue charts and enlarged text. The completed replay shows **28 genuine crossings**, **6,651 traffic observations**, and directions **24 / 4**.
+
+![Current progressive Simulated USB Camera replay](evidence/final-submission/current-dashboard/simulated-replay.jpg)
+
+Recorded replay paused around 4.3 seconds: **3 crossings** and **766 traffic observations** from source frame 128. This is recorded video with genuine metadata, not physical USB inference.
+
+[Full dashboard and charts](evidence/final-submission/current-dashboard/full-dashboard.jpg) · [Crossing event history](evidence/final-submission/current-dashboard/crossing-events.jpg) · [Recorded Video stable mode](evidence/final-submission/current-dashboard/recorded-video.jpg) · [Capture provenance and audit](evidence/final-submission/current-dashboard/README.md)
+
+Older designs remain in [historical screenshot evidence](evidence/final-submission/HISTORICAL_SCREENSHOTS.md); they do not represent the current interface.
 
 ## PipeGen Pipeline IR — Node Graph
 
@@ -125,11 +133,11 @@ pnpm build
 
 The final replay implementation passed **20 backend tests**, TypeScript validation, the production build and live localhost API/media/export checks. The later colour and typography changes also passed production builds, with TypeScript checked after the typography update. One upstream Starlette/httpx deprecation warning remains.
 
-Replay checkpoints verified against metadata: **0 crossings at 0s, 3 at 5s, 10 at 15s and 28 at the end**. SQLite retained exactly 28 recorded events. Browser checks covered playback, pause, restart, source switching, end totals, automatic fallback and the no-camera state. See [detailed replay verification](evidence/camera-replay/VERIFICATION.md) and [HTTP results](evidence/camera-replay/localhost-smoke.json). Browser control was subsequently disabled, so the final colour/typography build has no fresh browser screenshot; older screenshots document their stated versions.
+Replay checkpoints verified against metadata: **0 crossings at 0s, 3 at 5s, 10 at 15s and 28 at the end**. SQLite retained exactly 28 recorded events. Browser checks covered playback, pause, restart, source switching, end totals, automatic fallback and the no-camera state. See [detailed replay verification](evidence/camera-replay/VERIFICATION.md) and [HTTP results](evidence/camera-replay/localhost-smoke.json). Fresh browser screenshots of the current colour/typography build are now included in `evidence/final-submission/current-dashboard/`; historical screenshots retain their original scope.
 
 ## Submission status
 
-Source and committed changes were successfully pushed to [vivekvijayababu/TrafficFlow-AI](https://github.com/vivekvijayababu/TrafficFlow-AI) on **`feature/simulated-usb-camera`**. This documents the pushed branch; no merge into `main` or hackathon portal submission is claimed.
+Source and committed changes were successfully pushed to [vivekvijayababu/CraftifAIHackathon_CRA004](https://github.com/vivekvijayababu/CraftifAIHackathon_CRA004) on **`feature/simulated-usb-camera`**. This documents the pushed branch; no merge into `main` or hackathon portal submission is claimed.
 
 | Commit | Delivered change |
 |---|---|
@@ -143,7 +151,7 @@ Use a single backend worker and loopback binding for this local submission. Auth
 
 ## Hackathon submission package
 
-`pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Earlier submission screenshots, build output and verification status are in `evidence/final-submission/`. Camera-mode evidence is in `evidence/camera-replay/`; these screenshots precede the final white/black typography update.
+`pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Earlier submission screenshots, build output and verification status are in `evidence/final-submission/`. Camera-mode evidence is in `evidence/camera-replay/`; that folder preserves feature-stage screenshots. Current visuals are in `evidence/final-submission/current-dashboard/`.
 
 The genuine supplied Pipeline IR node graph screenshot is embedded above. Actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are also included. The source branch has been pushed to the authorized GitHub repository linked above. No hackathon portal submission has been claimed.
 
@@ -151,7 +159,7 @@ The genuine supplied Pipeline IR node graph screenshot is embedded above. Actual
 
 | Requirement | Repository evidence | Verified status |
 |---|---|---|
-| Working application | [Application screenshot](evidence/final-submission/dashboard-real-full.jpg), [run verification](evidence/camera-replay/VERIFICATION.md) | Included; screenshot is an earlier working design |
+| Working application | [Current application screenshot](evidence/final-submission/current-dashboard/overview.jpg), [run verification](evidence/camera-replay/VERIFICATION.md) | Included; current white/black interface verified |
 | Official Pipeline IR graph screenshot | [Unmodified supplied PNG](evidence/pipegen/pipeline-ir-graph.png) | Included |
 | TensorRT FP16 benchmark | [Engine benchmark](evidence/pipegen/tensorrt-benchmark.json), [runtime profile](evidence/pipegen/tensorrt-runtime.profile.json) | Recorded mean 7.23427 ms, throughput 155.522 QPS; not dashboard FPS |
 | DeepStream execution | [Successful run log](evidence/pipegen/deepstream-run.sanitized.log) | Included |

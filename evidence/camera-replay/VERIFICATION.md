@@ -1,3 +1,5 @@
+> Historical feature-stage verification. Current white/black screenshots and latest audit: [current dashboard](../final-submission/current-dashboard/README.md). The earlier browser restriction described below was resolved for this audit.
+
 # Camera replay verification — 2026-10-18
 
 Final automated checks: **20 backend tests passed**, TypeScript check passed, Vite production build passed (29 modules). One upstream Starlette/httpx deprecation warning remains. Tests cover event boundaries, prefix observations, restart/repeat behavior, validation, unavailable metadata, filtered exports and stable/synthetic isolation in addition to the existing suite.

@@ -33,6 +33,8 @@ Tracks are tracker identities, not guaranteed physical objects. This run contain
 - `GET /api/stats?mode=real`: final recorded-run crossing totals.
 - `GET /api/events?mode=real`: native source events, with class/direction filtering.
 - `GET /api/export?mode=real&format=json|csv`: filtered source event export.
+- `GET /api/replay?seconds=…`: genuine cumulative snapshot through playback time.
+- `GET /api/replay/export?seconds=…&format=json|csv`: events reached in playback, respecting filters.
 - Existing synthetic REST/WebSocket functionality remains separate.
 
 While a recorded run is loaded, live real ingestion and real line edits are rejected to prevent mixing recomputed events with authoritative run counts.

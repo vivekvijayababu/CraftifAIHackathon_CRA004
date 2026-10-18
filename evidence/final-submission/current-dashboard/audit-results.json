@@ -1,0 +1,2078 @@
+{
+  "application_commit": "691a4ad",
+  "checks": {
+    "frames": 900,
+    "raw_observations": 7857,
+    "traffic_observations": 6651,
+    "traffic_tracker_ids": 122,
+    "crossings": 28,
+    "left_to_right": 24,
+    "right_to_left": 4,
+    "mean_engine_latency_ms": 7.23427,
+    "engine_throughput_qps": 155.522,
+    "backend_tests": "20 passed, 1 upstream deprecation warning",
+    "typescript": "passed",
+    "production_build": "passed"
+  },
+  "live": {
+    "/api/health": {
+      "status": 200,
+      "bytes": 211,
+      "data": {
+        "status": "ok",
+        "database": "ok",
+        "recorded_run_available": true,
+        "recorded_run_error": null,
+        "real_pipeline_connected": false,
+        "mapping_confirmed": false,
+        "synthetic_label": "SYNTHETIC MODE \u2014 simulated development data"
+      }
+    },
+    "/api/pipegen/summary": {
+      "status": 200,
+      "bytes": 16848,
+      "data": {
+        "available": true,
+        "sha256": "51f80e7a468d185c628b6bc52168efb37aa43c20fcbcc28586e7286a6c223f30",
+        "frame_count": 900,
+        "duration_seconds": 29.966666667,
+        "first_pts_ns": 66666666,
+        "last_pts_ns": 30033333333,
+        "detection_observations": 7857,
+        "traffic_detection_observations": 6651,
+        "unique_track_ids": 130,
+        "observations_by_label": {
+          "traffic light": 899,
+          "car": 3748,
+          "person": 1717,
+          "bicycle": 739,
+          "truck": 259,
+          "handbag": 295,
+          "motorcycle": 188,
+          "backpack": 12
+        },
+        "unique_tracks_by_label": {
+          "traffic light": 1,
+          "car": 94,
+          "person": 17,
+          "bicycle": 3,
+          "truck": 4,
+          "handbag": 6,
+          "motorcycle": 4,
+          "backpack": 1
+        },
+        "class_id_labels": {
+          "9": "traffic light",
+          "2": "car",
+          "0": "person",
+          "1": "bicycle",
+          "7": "truck",
+          "26": "handbag",
+          "3": "motorcycle",
+          "24": "backpack"
+        },
+        "mode": "real",
+        "source": "pipegen_recorded_run",
+        "counts": {
+          "car": 20,
+          "bus": 0,
+          "truck": 0,
+          "motorcycle": 3,
+          "bicycle": 0,
+          "pedestrian": 5
+        },
+        "directions": {
+          "left_to_right": 24,
+          "right_to_left": 4
+        },
+        "total_crossings": 28,
+        "activity": [
+          {
+            "timestamp": "0s",
+            "relative_seconds": 0,
+            "count": 1
+          },
+          {
+            "timestamp": "1s",
+            "relative_seconds": 1,
+            "count": 1
+          },
+          {
+            "timestamp": "2s",
+            "relative_seconds": 2,
+            "count": 1
+          },
+          {
+            "timestamp": "5s",
+            "relative_seconds": 5,
+            "count": 1
+          },
+          {
+            "timestamp": "12s",
+            "relative_seconds": 12,
+            "count": 2
+          },
+          {
+            "timestamp": "13s",
+            "relative_seconds": 13,
+            "count": 3
+          },
+          {
+            "timestamp": "14s",
+            "relative_seconds": 14,
+            "count": 1
+          },
+          {
+            "timestamp": "15s",
+            "relative_seconds": 15,
+            "count": 1
+          },
+          {
+            "timestamp": "16s",
+            "relative_seconds": 16,
+            "count": 1
+          },
+          {
+            "timestamp": "17s",
+            "relative_seconds": 17,
+            "count": 1
+          },
+          {
+            "timestamp": "18s",
+            "relative_seconds": 18,
+            "count": 3
+          },
+          {
+            "timestamp": "19s",
+            "relative_seconds": 19,
+            "count": 2
+          },
+          {
+            "timestamp": "20s",
+            "relative_seconds": 20,
+            "count": 1
+          },
+          {
+            "timestamp": "21s",
+            "relative_seconds": 21,
+            "count": 1
+          },
+          {
+            "timestamp": "22s",
+            "relative_seconds": 22,
+            "count": 1
+          },
+          {
+            "timestamp": "24s",
+            "relative_seconds": 24,
+            "count": 3
+          },
+          {
+            "timestamp": "25s",
+            "relative_seconds": 25,
+            "count": 1
+          },
+          {
+            "timestamp": "28s",
+            "relative_seconds": 28,
+            "count": 1
+          },
+          {
+            "timestamp": "29s",
+            "relative_seconds": 29,
+            "count": 2
+          }
+        ],
+        "gaps": [
+          "No UTC/capture timestamp: presentation timestamps and relative seconds only.",
+          "Crossing events have no confidence; class ID is joined from matching track and label in the same frame when present.",
+          "Unique tracks per class may overlap if a tracker ID changes classification; observations are not unique vehicles."
+        ],
+        "events": [
+          {
+            "id": 1,
+            "event_id": "2:1",
+            "source_event_id": "2:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 20,
+            "pts_ns": 733333333,
+            "relative_seconds": 0.666666667,
+            "timestamp": null,
+            "track_id": "2",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              198.301
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 2,
+            "event_id": "8:1",
+            "source_event_id": "8:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 48,
+            "pts_ns": 1666666666,
+            "relative_seconds": 1.6,
+            "timestamp": null,
+            "track_id": "8",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.931
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 3,
+            "event_id": "3:1",
+            "source_event_id": "3:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 67,
+            "pts_ns": 2300000000,
+            "relative_seconds": 2.233333334,
+            "timestamp": null,
+            "track_id": "3",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              231.23
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 4,
+            "event_id": "7:1",
+            "source_event_id": "7:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 155,
+            "pts_ns": 5233333333,
+            "relative_seconds": 5.166666667,
+            "timestamp": null,
+            "track_id": "7",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              212.318
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 5,
+            "event_id": "27:1",
+            "source_event_id": "27:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 384,
+            "pts_ns": 12866666666,
+            "relative_seconds": 12.8,
+            "timestamp": null,
+            "track_id": "27",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              224.571
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 6,
+            "event_id": "28:1",
+            "source_event_id": "28:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 384,
+            "pts_ns": 12866666666,
+            "relative_seconds": 12.8,
+            "timestamp": null,
+            "track_id": "28",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.09
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 7,
+            "event_id": "30:1",
+            "source_event_id": "30:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 408,
+            "pts_ns": 13666666666,
+            "relative_seconds": 13.6,
+            "timestamp": null,
+            "track_id": "30",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              221.702
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 8,
+            "event_id": "31:1",
+            "source_event_id": "31:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 408,
+            "pts_ns": 13666666666,
+            "relative_seconds": 13.6,
+            "timestamp": null,
+            "track_id": "31",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              191.258
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 9,
+            "event_id": "19:1",
+            "source_event_id": "19:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 411,
+            "pts_ns": 13766666666,
+            "relative_seconds": 13.7,
+            "timestamp": null,
+            "track_id": "19",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              180.463
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 10,
+            "event_id": "17:1",
+            "source_event_id": "17:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 432,
+            "pts_ns": 14466666666,
+            "relative_seconds": 14.4,
+            "timestamp": null,
+            "track_id": "17",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              286.378
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 11,
+            "event_id": "35:1",
+            "source_event_id": "35:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 467,
+            "pts_ns": 15633333333,
+            "relative_seconds": 15.566666667,
+            "timestamp": null,
+            "track_id": "35",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.091
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 12,
+            "event_id": "41:1",
+            "source_event_id": "41:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 492,
+            "pts_ns": 16466666666,
+            "relative_seconds": 16.4,
+            "timestamp": null,
+            "track_id": "41",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              217.839
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 13,
+            "event_id": "53:1",
+            "source_event_id": "53:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 519,
+            "pts_ns": 17366666666,
+            "relative_seconds": 17.3,
+            "timestamp": null,
+            "track_id": "53",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              343.464
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 14,
+            "event_id": "50:1",
+            "source_event_id": "50:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 540,
+            "pts_ns": 18066666666,
+            "relative_seconds": 18.0,
+            "timestamp": null,
+            "track_id": "50",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.963
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 15,
+            "event_id": "51:1",
+            "source_event_id": "51:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 540,
+            "pts_ns": 18066666666,
+            "relative_seconds": 18.0,
+            "timestamp": null,
+            "track_id": "51",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.952
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 16,
+            "event_id": "69:1",
+            "source_event_id": "69:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 561,
+            "pts_ns": 18766666666,
+            "relative_seconds": 18.7,
+            "timestamp": null,
+            "track_id": "69",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.535
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 17,
+            "event_id": "67:1",
+            "source_event_id": "67:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 588,
+            "pts_ns": 19666666666,
+            "relative_seconds": 19.6,
+            "timestamp": null,
+            "track_id": "67",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              214.532
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 18,
+            "event_id": "79:1",
+            "source_event_id": "79:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 599,
+            "pts_ns": 20033333333,
+            "relative_seconds": 19.966666667,
+            "timestamp": null,
+            "track_id": "79",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.096
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 19,
+            "event_id": "82:1",
+            "source_event_id": "82:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 623,
+            "pts_ns": 20833333333,
+            "relative_seconds": 20.766666667,
+            "timestamp": null,
+            "track_id": "82",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.456
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 20,
+            "event_id": "81:1",
+            "source_event_id": "81:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 651,
+            "pts_ns": 21766666666,
+            "relative_seconds": 21.7,
+            "timestamp": null,
+            "track_id": "81",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              213.476
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 21,
+            "event_id": "88:1",
+            "source_event_id": "88:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 679,
+            "pts_ns": 22700000000,
+            "relative_seconds": 22.633333334,
+            "timestamp": null,
+            "track_id": "88",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.196
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 22,
+            "event_id": "101:1",
+            "source_event_id": "101:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 726,
+            "pts_ns": 24266666666,
+            "relative_seconds": 24.2,
+            "timestamp": null,
+            "track_id": "101",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              200.131
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 23,
+            "event_id": "99:1",
+            "source_event_id": "99:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 726,
+            "pts_ns": 24266666666,
+            "relative_seconds": 24.2,
+            "timestamp": null,
+            "track_id": "99",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              200.192
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 24,
+            "event_id": "114:1",
+            "source_event_id": "114:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 742,
+            "pts_ns": 24800000000,
+            "relative_seconds": 24.733333334,
+            "timestamp": null,
+            "track_id": "114",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              193.768
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 25,
+            "event_id": "110:1",
+            "source_event_id": "110:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 759,
+            "pts_ns": 25366666666,
+            "relative_seconds": 25.3,
+            "timestamp": null,
+            "track_id": "110",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              211.057
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 26,
+            "event_id": "124:1",
+            "source_event_id": "124:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 867,
+            "pts_ns": 28966666666,
+            "relative_seconds": 28.9,
+            "timestamp": null,
+            "track_id": "124",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              206.812
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 27,
+            "event_id": "127:1",
+            "source_event_id": "127:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 884,
+            "pts_ns": 29533333333,
+            "relative_seconds": 29.466666667,
+            "timestamp": null,
+            "track_id": "127",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              230.02
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 28,
+            "event_id": "128:1",
+            "source_event_id": "128:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 884,
+            "pts_ns": 29533333333,
+            "relative_seconds": 29.466666667,
+            "timestamp": null,
+            "track_id": "128",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              197.582
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          }
+        ]
+      }
+    },
+    "/api/replay?seconds=30": {
+      "status": 200,
+      "bytes": 20449,
+      "data": {
+        "type": "frame",
+        "mode": "real",
+        "source": "pipegen_recorded_run",
+        "camera_id": "intersection-01",
+        "frame_id": 899,
+        "pts_ns": 30033333333,
+        "relative_seconds": 29.966666667,
+        "timestamp": null,
+        "width": 1280,
+        "height": 720,
+        "detections": [
+          {
+            "track_id": "0",
+            "class_id": 9,
+            "class_name": "traffic light",
+            "label": "traffic light",
+            "confidence": 0.543,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.93828125,
+              "y": 0.04055555555555555,
+              "width": 0.02734375,
+              "height": 0.07972222222222222
+            }
+          },
+          {
+            "track_id": "127",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": 0.5469,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.737109375,
+              "y": 0.2579166666666666,
+              "width": 0.0728125,
+              "height": 0.09944444444444443
+            }
+          },
+          {
+            "track_id": "124",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": 0.6226,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.7010156249999999,
+              "y": 0.2111111111111111,
+              "width": 0.1690625,
+              "height": 0.12777777777777777
+            }
+          },
+          {
+            "track_id": "126",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": 0.5254,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.217109375,
+              "y": 0.2313888888888889,
+              "width": 0.052109375,
+              "height": 0.06166666666666666
+            }
+          },
+          {
+            "track_id": "23",
+            "class_id": 1,
+            "class_name": "bicycle",
+            "label": "bicycle",
+            "confidence": 0.769,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.9297656249999999,
+              "y": 0.2688888888888889,
+              "width": 0.070234375,
+              "height": 0.12583333333333332
+            }
+          },
+          {
+            "track_id": "123",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": 0.606,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.880625,
+              "y": 0.2348611111111111,
+              "width": 0.013750000000000002,
+              "height": 0.07472222222222222
+            }
+          },
+          {
+            "track_id": "65",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": 0.771,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.9607812499999999,
+              "y": 0.19791666666666666,
+              "width": 0.038671875,
+              "height": 0.19652777777777777
+            }
+          },
+          {
+            "track_id": "128",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": 0.6816,
+            "tracker_confidence": 1.0,
+            "bounding_box": {
+              "x": 0.74875,
+              "y": 0.20444444444444443,
+              "width": 0.04390625,
+              "height": 0.13125
+            }
+          }
+        ],
+        "shapes": [
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                640.0,
+                100.0
+              ],
+              [
+                640.0,
+                620.0
+              ]
+            ],
+            "label": "counting_line"
+          },
+          {
+            "kind": "box",
+            "x": 943.5,
+            "y": 185.7,
+            "w": 93.2,
+            "h": 71.6,
+            "label": "motorcycle",
+            "id": 127,
+            "score": 0.5469
+          },
+          {
+            "kind": "box",
+            "x": 897.3,
+            "y": 152.0,
+            "w": 216.4,
+            "h": 92.0,
+            "label": "car",
+            "id": 124,
+            "score": 0.6226
+          },
+          {
+            "kind": "box",
+            "x": 277.9,
+            "y": 166.6,
+            "w": 66.7,
+            "h": 44.4,
+            "label": "car",
+            "id": 126,
+            "score": 0.5254
+          },
+          {
+            "kind": "box",
+            "x": 1190.1,
+            "y": 193.6,
+            "w": 89.9,
+            "h": 90.6,
+            "label": "bicycle",
+            "id": 23,
+            "score": 0.769
+          },
+          {
+            "kind": "box",
+            "x": 1127.2,
+            "y": 169.1,
+            "w": 17.6,
+            "h": 53.8,
+            "label": "person",
+            "id": 123,
+            "score": 0.606
+          },
+          {
+            "kind": "box",
+            "x": 1229.8,
+            "y": 142.5,
+            "w": 49.5,
+            "h": 141.5,
+            "label": "person",
+            "id": 65,
+            "score": 0.771
+          },
+          {
+            "kind": "box",
+            "x": 958.4,
+            "y": 147.2,
+            "w": 56.2,
+            "h": 94.5,
+            "label": "person",
+            "id": 128,
+            "score": 0.6816
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "event_id": "2:1",
+            "source_event_id": "2:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 20,
+            "pts_ns": 733333333,
+            "relative_seconds": 0.666666667,
+            "timestamp": null,
+            "track_id": "2",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              198.301
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 2,
+            "event_id": "8:1",
+            "source_event_id": "8:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 48,
+            "pts_ns": 1666666666,
+            "relative_seconds": 1.6,
+            "timestamp": null,
+            "track_id": "8",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.931
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 3,
+            "event_id": "3:1",
+            "source_event_id": "3:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 67,
+            "pts_ns": 2300000000,
+            "relative_seconds": 2.233333334,
+            "timestamp": null,
+            "track_id": "3",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              231.23
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 4,
+            "event_id": "7:1",
+            "source_event_id": "7:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 155,
+            "pts_ns": 5233333333,
+            "relative_seconds": 5.166666667,
+            "timestamp": null,
+            "track_id": "7",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              212.318
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 5,
+            "event_id": "27:1",
+            "source_event_id": "27:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 384,
+            "pts_ns": 12866666666,
+            "relative_seconds": 12.8,
+            "timestamp": null,
+            "track_id": "27",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              224.571
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 6,
+            "event_id": "28:1",
+            "source_event_id": "28:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 384,
+            "pts_ns": 12866666666,
+            "relative_seconds": 12.8,
+            "timestamp": null,
+            "track_id": "28",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.09
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 7,
+            "event_id": "30:1",
+            "source_event_id": "30:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 408,
+            "pts_ns": 13666666666,
+            "relative_seconds": 13.6,
+            "timestamp": null,
+            "track_id": "30",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              221.702
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 8,
+            "event_id": "31:1",
+            "source_event_id": "31:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 408,
+            "pts_ns": 13666666666,
+            "relative_seconds": 13.6,
+            "timestamp": null,
+            "track_id": "31",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              191.258
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 9,
+            "event_id": "19:1",
+            "source_event_id": "19:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 411,
+            "pts_ns": 13766666666,
+            "relative_seconds": 13.7,
+            "timestamp": null,
+            "track_id": "19",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              180.463
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 10,
+            "event_id": "17:1",
+            "source_event_id": "17:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 432,
+            "pts_ns": 14466666666,
+            "relative_seconds": 14.4,
+            "timestamp": null,
+            "track_id": "17",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              286.378
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 11,
+            "event_id": "35:1",
+            "source_event_id": "35:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 467,
+            "pts_ns": 15633333333,
+            "relative_seconds": 15.566666667,
+            "timestamp": null,
+            "track_id": "35",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.091
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 12,
+            "event_id": "41:1",
+            "source_event_id": "41:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 492,
+            "pts_ns": 16466666666,
+            "relative_seconds": 16.4,
+            "timestamp": null,
+            "track_id": "41",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              217.839
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 13,
+            "event_id": "53:1",
+            "source_event_id": "53:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 519,
+            "pts_ns": 17366666666,
+            "relative_seconds": 17.3,
+            "timestamp": null,
+            "track_id": "53",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              343.464
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 14,
+            "event_id": "50:1",
+            "source_event_id": "50:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 540,
+            "pts_ns": 18066666666,
+            "relative_seconds": 18.0,
+            "timestamp": null,
+            "track_id": "50",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.963
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 15,
+            "event_id": "51:1",
+            "source_event_id": "51:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 540,
+            "pts_ns": 18066666666,
+            "relative_seconds": 18.0,
+            "timestamp": null,
+            "track_id": "51",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.952
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 16,
+            "event_id": "69:1",
+            "source_event_id": "69:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 561,
+            "pts_ns": 18766666666,
+            "relative_seconds": 18.7,
+            "timestamp": null,
+            "track_id": "69",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.535
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 17,
+            "event_id": "67:1",
+            "source_event_id": "67:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 588,
+            "pts_ns": 19666666666,
+            "relative_seconds": 19.6,
+            "timestamp": null,
+            "track_id": "67",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              214.532
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 18,
+            "event_id": "79:1",
+            "source_event_id": "79:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 599,
+            "pts_ns": 20033333333,
+            "relative_seconds": 19.966666667,
+            "timestamp": null,
+            "track_id": "79",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.096
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 19,
+            "event_id": "82:1",
+            "source_event_id": "82:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 623,
+            "pts_ns": 20833333333,
+            "relative_seconds": 20.766666667,
+            "timestamp": null,
+            "track_id": "82",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              194.456
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 20,
+            "event_id": "81:1",
+            "source_event_id": "81:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 651,
+            "pts_ns": 21766666666,
+            "relative_seconds": 21.7,
+            "timestamp": null,
+            "track_id": "81",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              213.476
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 21,
+            "event_id": "88:1",
+            "source_event_id": "88:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 679,
+            "pts_ns": 22700000000,
+            "relative_seconds": 22.633333334,
+            "timestamp": null,
+            "track_id": "88",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              202.196
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 22,
+            "event_id": "101:1",
+            "source_event_id": "101:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 726,
+            "pts_ns": 24266666666,
+            "relative_seconds": 24.2,
+            "timestamp": null,
+            "track_id": "101",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              200.131
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 23,
+            "event_id": "99:1",
+            "source_event_id": "99:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 726,
+            "pts_ns": 24266666666,
+            "relative_seconds": 24.2,
+            "timestamp": null,
+            "track_id": "99",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              200.192
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 24,
+            "event_id": "114:1",
+            "source_event_id": "114:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 742,
+            "pts_ns": 24800000000,
+            "relative_seconds": 24.733333334,
+            "timestamp": null,
+            "track_id": "114",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "right_to_left",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              193.768
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 25,
+            "event_id": "110:1",
+            "source_event_id": "110:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 759,
+            "pts_ns": 25366666666,
+            "relative_seconds": 25.3,
+            "timestamp": null,
+            "track_id": "110",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              211.057
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 26,
+            "event_id": "124:1",
+            "source_event_id": "124:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 867,
+            "pts_ns": 28966666666,
+            "relative_seconds": 28.9,
+            "timestamp": null,
+            "track_id": "124",
+            "class_id": 2,
+            "class_name": "car",
+            "label": "car",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              206.812
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 27,
+            "event_id": "127:1",
+            "source_event_id": "127:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 884,
+            "pts_ns": 29533333333,
+            "relative_seconds": 29.466666667,
+            "timestamp": null,
+            "track_id": "127",
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "label": "motorcycle",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              230.02
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          },
+          {
+            "id": 28,
+            "event_id": "128:1",
+            "source_event_id": "128:1",
+            "mode": "real",
+            "source": "pipegen_recorded_run",
+            "camera_id": "intersection-01",
+            "frame_id": 884,
+            "pts_ns": 29533333333,
+            "relative_seconds": 29.466666667,
+            "timestamp": null,
+            "track_id": "128",
+            "class_id": 0,
+            "class_name": "pedestrian",
+            "label": "person",
+            "confidence": null,
+            "counting_line_id": "counting_line",
+            "crossing_direction": "left_to_right",
+            "crossing_event_type": "line_crossing",
+            "point": [
+              640.0,
+              197.582
+            ],
+            "provenance": "PipeGen fields.event_N_*; class ID joined only from matching object in same frame"
+          }
+        ],
+        "stats": {
+          "mode": "real",
+          "source": "pipegen_recorded_run",
+          "counts": {
+            "car": 20,
+            "bus": 0,
+            "truck": 0,
+            "motorcycle": 3,
+            "bicycle": 0,
+            "pedestrian": 5
+          },
+          "directions": {
+            "left_to_right": 24,
+            "right_to_left": 4
+          },
+          "total_crossings": 28,
+          "activity": [
+            {
+              "timestamp": "0s",
+              "relative_seconds": 0,
+              "count": 1
+            },
+            {
+              "timestamp": "1s",
+              "relative_seconds": 1,
+              "count": 1
+            },
+            {
+              "timestamp": "2s",
+              "relative_seconds": 2,
+              "count": 1
+            },
+            {
+              "timestamp": "5s",
+              "relative_seconds": 5,
+              "count": 1
+            },
+            {
+              "timestamp": "12s",
+              "relative_seconds": 12,
+              "count": 2
+            },
+            {
+              "timestamp": "13s",
+              "relative_seconds": 13,
+              "count": 3
+            },
+            {
+              "timestamp": "14s",
+              "relative_seconds": 14,
+              "count": 1
+            },
+            {
+              "timestamp": "15s",
+              "relative_seconds": 15,
+              "count": 1
+            },
+            {
+              "timestamp": "16s",
+              "relative_seconds": 16,
+              "count": 1
+            },
+            {
+              "timestamp": "17s",
+              "relative_seconds": 17,
+              "count": 1
+            },
+            {
+              "timestamp": "18s",
+              "relative_seconds": 18,
+              "count": 3
+            },
+            {
+              "timestamp": "19s",
+              "relative_seconds": 19,
+              "count": 2
+            },
+            {
+              "timestamp": "20s",
+              "relative_seconds": 20,
+              "count": 1
+            },
+            {
+              "timestamp": "21s",
+              "relative_seconds": 21,
+              "count": 1
+            },
+            {
+              "timestamp": "22s",
+              "relative_seconds": 22,
+              "count": 1
+            },
+            {
+              "timestamp": "24s",
+              "relative_seconds": 24,
+              "count": 3
+            },
+            {
+              "timestamp": "25s",
+              "relative_seconds": 25,
+              "count": 1
+            },
+            {
+              "timestamp": "28s",
+              "relative_seconds": 28,
+              "count": 1
+            },
+            {
+              "timestamp": "29s",
+              "relative_seconds": 29,
+              "count": 2
+            }
+          ]
+        },
+        "summary": {
+          "available": true,
+          "sha256": "51f80e7a468d185c628b6bc52168efb37aa43c20fcbcc28586e7286a6c223f30",
+          "frame_count": 900,
+          "processed_frames": 900,
+          "duration_seconds": 29.966666667,
+          "first_pts_ns": 66666666,
+          "last_pts_ns": 30033333333,
+          "detection_observations": 7857,
+          "traffic_detection_observations": 6651,
+          "unique_track_ids": 130,
+          "observations_by_label": {
+            "traffic light": 899,
+            "car": 3748,
+            "person": 1717,
+            "bicycle": 739,
+            "truck": 259,
+            "handbag": 295,
+            "motorcycle": 188,
+            "backpack": 12
+          },
+          "unique_tracks_by_label": {
+            "traffic light": 1,
+            "car": 94,
+            "person": 17,
+            "bicycle": 3,
+            "truck": 4,
+            "handbag": 6,
+            "motorcycle": 4,
+            "backpack": 1
+          },
+          "mode": "real",
+          "source": "pipegen_recorded_run",
+          "counts": {
+            "car": 20,
+            "bus": 0,
+            "truck": 0,
+            "motorcycle": 3,
+            "bicycle": 0,
+            "pedestrian": 5
+          },
+          "directions": {
+            "left_to_right": 24,
+            "right_to_left": 4
+          },
+          "total_crossings": 28,
+          "activity": [
+            {
+              "timestamp": "0s",
+              "relative_seconds": 0,
+              "count": 1
+            },
+            {
+              "timestamp": "1s",
+              "relative_seconds": 1,
+              "count": 1
+            },
+            {
+              "timestamp": "2s",
+              "relative_seconds": 2,
+              "count": 1
+            },
+            {
+              "timestamp": "5s",
+              "relative_seconds": 5,
+              "count": 1
+            },
+            {
+              "timestamp": "12s",
+              "relative_seconds": 12,
+              "count": 2
+            },
+            {
+              "timestamp": "13s",
+              "relative_seconds": 13,
+              "count": 3
+            },
+            {
+              "timestamp": "14s",
+              "relative_seconds": 14,
+              "count": 1
+            },
+            {
+              "timestamp": "15s",
+              "relative_seconds": 15,
+              "count": 1
+            },
+            {
+              "timestamp": "16s",
+              "relative_seconds": 16,
+              "count": 1
+            },
+            {
+              "timestamp": "17s",
+              "relative_seconds": 17,
+              "count": 1
+            },
+            {
+              "timestamp": "18s",
+              "relative_seconds": 18,
+              "count": 3
+            },
+            {
+              "timestamp": "19s",
+              "relative_seconds": 19,
+              "count": 2
+            },
+            {
+              "timestamp": "20s",
+              "relative_seconds": 20,
+              "count": 1
+            },
+            {
+              "timestamp": "21s",
+              "relative_seconds": 21,
+              "count": 1
+            },
+            {
+              "timestamp": "22s",
+              "relative_seconds": 22,
+              "count": 1
+            },
+            {
+              "timestamp": "24s",
+              "relative_seconds": 24,
+              "count": 3
+            },
+            {
+              "timestamp": "25s",
+              "relative_seconds": 25,
+              "count": 1
+            },
+            {
+              "timestamp": "28s",
+              "relative_seconds": 28,
+              "count": 1
+            },
+            {
+              "timestamp": "29s",
+              "relative_seconds": 29,
+              "count": 2
+            }
+          ]
+        },
+        "playback_rate": 1,
+        "label": "SIMULATED CAMERA \u2014 RECORDED REPLAY"
+      }
+    },
+    "/": {
+      "status": 200,
+      "bytes": 417
+    }
+  }
+}

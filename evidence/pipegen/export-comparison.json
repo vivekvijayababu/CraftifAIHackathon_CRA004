@@ -1,0 +1,461 @@
+{
+  "scope": "Read-only comparison against accessible original working project, not a certified official export archive",
+  "verified_manifest_files": [
+    "pipeline/deepstream/configs/config_det_pgie.txt",
+    "pipeline/deepstream/configs/config_tracker.yml",
+    "pipeline/deepstream/labels/config_det_pgie_labels.txt",
+    "pipeline/deepstream/run.sh",
+    "pipeline/deepstream/parsers/meta_json.cpp",
+    "pipeline/deepstream/parsers/frame_json.h",
+    "pipeline/deepstream/parsers/event_sink.h",
+    "pipeline/deepstream/parsers/render_meta.h",
+    "pipeline/deepstream/parsers/shape_json.h",
+    "pipeline/deepstream/parsers/vms_detect.cpp",
+    "pipeline/deepstream/parsers/config_det_pgie_parser.cpp",
+    "pipeline/deepstream/parsers/line_crossing_render_process.cpp",
+    "pipeline/deepstream/parsers/Makefile"
+  ],
+  "screenshot_sha256": "84c6fc7fe08a31f3e0b4af1e0d0e6878e994d8d71f28751485c0a7bab666577c",
+  "original_project_inventory": [
+    {
+      "source_relative": ".cache/documents/b7af80decbb3641bf3e8602c8e03332799c8f0adda9429134f346ccdca1b884e.json",
+      "bytes": 2742,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/229eb961cd54c13f417589ae1b52e4a4d44938d1eb19002e3868084ce77a52a0.json",
+      "bytes": 1239,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/2f502f43e476e133f7f4f280acf57748cc0fd1a6f901be58775f8137b9d7846d.json",
+      "bytes": 13528,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/37c644e20af28698575804f13548b783fbe366935d9887f9a3e7dcd130cca936.json",
+      "bytes": 338,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/3b39566ed91a0a429605cb31be31847c9850833f53114c07fe50caf121ce76f9.json",
+      "bytes": 2368,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/63c9a3ffa327d1ca687b1ae8e3ca63eba61461931f88e37c90a5e6e2de7527c1.json",
+      "bytes": 5472,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/65fe06041cc6d4cdccb84aba2d85799a88f91f681d3b56c136707eb9ae403545.json",
+      "bytes": 4776,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/77e326990844e1a2129a2fda9b25183095a78f129821323054174e8de6eaeb66.json",
+      "bytes": 1048,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/f7f68a90c146c7223d0656496e0ae708aecc24464b953fd7f197bb847acd7955.json",
+      "bytes": 712,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/artifacts/fa125c605ffdd235b8009dccc35594f98daba1cbb2d3b19a3009a4352d070823.json",
+      "bytes": 2310,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/3dcf457681914a0b80931bb89b7af9db.json",
+      "bytes": 1357,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/492693069d854ba291fb2bde07838548.json",
+      "bytes": 1352,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/55e9ca0c721845a6b2e80539dec62ee0.json",
+      "bytes": 1417,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/5afb683a3b284dff890515514eefec2b.json",
+      "bytes": 1415,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/6afd1d9c0d1e4e1bba734959c3d05256.json",
+      "bytes": 1316,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/817c564696704400ac3951101a8c6f56.json",
+      "bytes": 1395,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/9bbc04f0adb848eca43c859d3161da33.json",
+      "bytes": 1397,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/c55a8d7f70b64104bf481c8968b49d3d.json",
+      "bytes": 1357,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/evidence/records/dd555b0a541643be92267819127f5e7c.json",
+      "bytes": 1386,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".cache/footage/e8786a34acaeeb185b40e6d7a9463cce.json",
+      "bytes": 633,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": ".pir_bindings.json",
+      "bytes": 303,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "PipelineIR.json",
+      "bytes": 27966,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "RequirementState.json",
+      "bytes": 67802,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "UserInfo.json",
+      "bytes": 25273,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "documents/pasted-405324b4.md",
+      "bytes": 2414,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_compile_output/engine_paths.json",
+      "bytes": 249,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/.timing-nvidia-geforce-rtx-3050-laptop-gpu-trt10.3.0.cache",
+      "bytes": 373752,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/ModelStage.json",
+      "bytes": 6364,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/ModelStage.log",
+      "bytes": 866,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/compile.data.json",
+      "bytes": 126559,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/engine.data.json",
+      "bytes": 693460,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/engine_tactics.json",
+      "bytes": 234279,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/visualize.data.json",
+      "bytes": 500956,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/yolov8m.fp16.modules.json",
+      "bytes": 6750,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/yolov8m.fp16.plan",
+      "bytes": 64634652,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/yolov8m.fp16.plan.key",
+      "bytes": 16,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "model_stage/yolov8m.fp16.runtime.profile.json",
+      "bytes": 34593,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "output/metadata.json",
+      "bytes": 2462702,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.run_output.txt",
+      "bytes": 2682,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00894.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00895.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00896.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00897.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00898.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/.verify_frames/f_00899.i420",
+      "bytes": 31104,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libconfig_det_pgie_parser.so",
+      "bytes": 16208,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libline_crossing_render_process.so",
+      "bytes": 76464,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libline_crossing_render_process.so.pipegen-cpu-safe",
+      "bytes": 0,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libmeta_json.so",
+      "bytes": 41008,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libmeta_json.so.pipegen-cpu-safe",
+      "bytes": 0,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libvms_detect.so",
+      "bytes": 60944,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/build/libvms_detect.so.pipegen-cpu-safe",
+      "bytes": 0,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/configs/config_det_pgie.txt",
+      "bytes": 1067,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/configs/config_tracker.yml",
+      "bytes": 892,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/debug.log",
+      "bytes": 3095,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/labels/config_det_pgie_labels.txt",
+      "bytes": 621,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/Makefile",
+      "bytes": 3900,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/config_det_pgie_parser.cpp",
+      "bytes": 5018,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/event_sink.h",
+      "bytes": 5373,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/frame_json.h",
+      "bytes": 40850,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/line_crossing_render_process.cpp",
+      "bytes": 19697,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/meta_json.cpp",
+      "bytes": 6395,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/render_meta.h",
+      "bytes": 53438,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/shape_json.h",
+      "bytes": 8401,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/parsers/vms_detect.cpp",
+      "bytes": 29673,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/run.debug.sh",
+      "bytes": 2539,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "pipeline/deepstream/run.sh",
+      "bytes": 2499,
+      "included_at_same_relative_path": true
+    },
+    {
+      "source_relative": "pipeline/deepstream/run.vms.sh",
+      "bytes": 4029,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/.gitattributes",
+      "bytes": 66,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/.gitignore",
+      "bytes": 2771,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/LICENSE",
+      "bytes": 1069,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/README.md",
+      "bytes": 3597,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/doc/img/detected_objects.jpg",
+      "bytes": 1430205,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/doc/img/yolov8_video.gif",
+      "bytes": 15023807,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/image_object_detection.py",
+      "bytes": 649,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/models/.gitkeep",
+      "bytes": 0,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/models/download.sh",
+      "bytes": 109,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/models/yolov8m.onnx",
+      "bytes": 103767487,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/requirements.txt",
+      "bytes": 62,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/video_object_detection.py",
+      "bytes": 1186,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/webcam_object_detection.py",
+      "bytes": 675,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/yolov8/YOLOv8.py",
+      "bytes": 4623,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/yolov8/__init__.py",
+      "bytes": 27,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/ONNX-YOLOv8-Object-Detection/yolov8/utils.py",
+      "bytes": 5332,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/VehicleDetection/application.py",
+      "bytes": 12890,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/VehicleDetection/model/download.sh",
+      "bytes": 110,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "src1/VehicleDetection/model/yolo11s.onnx",
+      "bytes": 38051662,
+      "included_at_same_relative_path": false
+    },
+    {
+      "source_relative": "state.json",
+      "bytes": 121368,
+      "included_at_same_relative_path": false
+    }
+  ]
+}

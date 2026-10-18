@@ -77,6 +77,18 @@ The licensed video is excluded from Git. On the prepared host it is available in
 
 See [camera mode and rollback guide](docs/SIMULATED_CAMERA.md) and [verification evidence](evidence/camera-replay/VERIFICATION.md).
 
+## Working TrafficFlow AI application
+
+![TrafficFlow AI showing genuine recorded traffic analytics](evidence/final-submission/dashboard-real-full.jpg)
+
+This captured working application shows the genuine recorded PipeGen integration. It predates the final white/black styling and camera source selector; it is retained as execution evidence, not a screenshot of the latest visual design. [Browser verification](evidence/camera-replay/VERIFICATION.md) records playback and fallback checks.
+
+## PipeGen Pipeline IR — Node Graph
+
+![Genuine CraftifAI PipeGen Pipeline IR node graph](evidence/pipegen/pipeline-ir-graph.png)
+
+The supplied, unmodified graph shows video input with source timing, preprocessing (BGR frame stretching, RGB conversion and pixel scaling), YOLOv8m detection and postprocessing to decode boxes and retain supported road users. Custom stages maintain object tracking IDs, detect bidirectional line crossings without duplicate transitions, and accumulate counts by class and direction. Outputs display annotated tracks/counts and write per-frame tracks, crossing events and cumulative JSON.
+
 ## Architecture
 
 ```mermaid
@@ -133,4 +145,17 @@ Use a single backend worker and loopback binding for this local submission. Auth
 
 `pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Earlier submission screenshots, build output and verification status are in `evidence/final-submission/`. Camera-mode evidence is in `evidence/camera-replay/`; these screenshots precede the final white/black typography update.
 
-The official PipeGen IR UI screenshot is missing; actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are included. The source branch has been pushed to the authorized GitHub repository linked above. No hackathon portal submission has been claimed.
+The genuine supplied Pipeline IR node graph screenshot is embedded above. Actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are also included. The source branch has been pushed to the authorized GitHub repository linked above. No hackathon portal submission has been claimed.
+
+## Submission evidence checklist
+
+| Requirement | Repository evidence | Verified status |
+|---|---|---|
+| Working application | [Application screenshot](evidence/final-submission/dashboard-real-full.jpg), [run verification](evidence/camera-replay/VERIFICATION.md) | Included; screenshot is an earlier working design |
+| Official Pipeline IR graph screenshot | [Unmodified supplied PNG](evidence/pipegen/pipeline-ir-graph.png) | Included |
+| TensorRT FP16 benchmark | [Engine benchmark](evidence/pipegen/tensorrt-benchmark.json), [runtime profile](evidence/pipegen/tensorrt-runtime.profile.json) | Recorded mean 7.23427 ms, throughput 155.522 QPS; not dashboard FPS |
+| DeepStream execution | [Successful run log](evidence/pipegen/deepstream-run.sanitized.log) | Included |
+| Complete official Export Project | [Sanitized export](pipegen-export/), [completeness audit](pipegen-export/EXPORT_COMPLETENESS.md) | **Incomplete; no accepted project export link supplied** |
+| Application run instructions | [Run locally](#run-locally), [video requirements](docs/VIDEO_PROVENANCE.md) | Included; source video is obtained separately |
+
+**Form Q1: YES** — the README embeds working application evidence and the supplied Pipeline IR graph. **Form Q2: NO** — this repository contains a verified sanitized source subset, not a complete official Export Project or an accepted project link. Application run instructions are present, but do not establish export completeness.

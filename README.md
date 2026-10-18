@@ -2,6 +2,18 @@
 
 TrafficFlow AI connects a completed PipeGen/DeepStream run to a React + TypeScript dashboard and FastAPI/SQLite backend. The supplied run uses YOLOv8m TensorRT FP16 on an RTX 3050 Laptop GPU. This submission presents **recorded real inference**, alongside an explicitly separate synthetic development mode.
 
+## Final application
+
+The current implementation is on [`feature/simulated-usb-camera`](https://github.com/vivekvijayababu/TrafficFlow-AI/tree/feature/simulated-usb-camera). It includes the genuine PipeGen integration, playback-synchronized camera demo, safe Recorded Video fallback, and the final **white interface with black text, blue chart accents and larger typography**. The latest visual update increased dashboard, control and chart text by 3 pixels while preserving functionality.
+
+- **Primary demo:** a 30-second intersection MP4 replay at its original 30 FPS, explicitly labeled as recorded replay.
+- **Progressive analytics:** source detections, bounding boxes, tracker IDs, class observations, directional crossings and event history follow playback time.
+- **Playback controls:** start, pause, restart and seek without inserting or duplicating source events.
+- **Stable fallback:** one-click Recorded Video retains full-run totals; replay errors automatically select it with an explanatory notice.
+- **Exports:** class/direction filtering and CSV/JSON; replay exports include events reached at the selected timestamp.
+- **Separate testing:** synthetic mode remains isolated from genuine recorded analytics.
+- **Future hardware:** device availability checks only; no physical USB camera inference is claimed.
+
 ## Verified run results
 
 | Metric | Result |
@@ -72,10 +84,13 @@ flowchart LR
   P[PipeGen DeepStream run] --> J[Read-only metadata.json]
   J --> V[Verified recorded-run adapter]
   V --> E[(SQLite run and explicit events)]
-  V --> A[FastAPI REST and WebSocket]
+  V --> A[FastAPI recorded REST API]
+  V --> T[Timestamp-indexed replay snapshots]
+  T --> A
   A --> R[React dashboard]
   M[Matching source video] --> R
-  S[Separate synthetic generator] --> A
+  S[Separate synthetic generator] --> W[Synthetic WebSocket stream]
+  W --> R
 ```
 
 The adapter converts source-pixel boxes into normalized display geometry. Playback uses source PTS relative to the first metadata frame; no UTC timestamp is manufactured. This completed-run import is not a live tailing pipeline; a future live bridge needs a separately verified output transport.
@@ -92,17 +107,30 @@ The adapter converts source-pixel boxes into normalized display geometry. Playba
 ```bash
 .venv/bin/python -m pytest backend/tests -q
 cd frontend
+pnpm exec tsc --noEmit
 pnpm build
 ```
 
+The final replay implementation passed **20 backend tests**, TypeScript validation, the production build and live localhost API/media/export checks. The later colour and typography changes also passed production builds, with TypeScript checked after the typography update. One upstream Starlette/httpx deprecation warning remains.
+
+Replay checkpoints verified against metadata: **0 crossings at 0s, 3 at 5s, 10 at 15s and 28 at the end**. SQLite retained exactly 28 recorded events. Browser checks covered playback, pause, restart, source switching, end totals, automatic fallback and the no-camera state. See [detailed replay verification](evidence/camera-replay/VERIFICATION.md) and [HTTP results](evidence/camera-replay/localhost-smoke.json). Browser control was subsequently disabled, so the final colour/typography build has no fresh browser screenshot; older screenshots document their stated versions.
+
 ## Submission status
 
-Local source repository is prepared with sanitized evidence and reproducible real metadata. No private account files, credentials, model weights, video binaries or host-specific paths are committed. No remote is configured and no public publication or unverified push has occurred.
+Source and committed changes were successfully pushed to [vivekvijayababu/TrafficFlow-AI](https://github.com/vivekvijayababu/TrafficFlow-AI) on **`feature/simulated-usb-camera`**. This documents the pushed branch; no merge into `main` or hackathon portal submission is claimed.
+
+| Commit | Delivered change |
+|---|---|
+| `ef7b1f8` | Recoverable checkpoint before the camera replay feature |
+| `fd82db1` | Genuine metadata-synchronized replay, source selector and recorded fallback |
+| `69f8fbe` | White/black interface, complementary blue graphs and larger text |
+
+The checkpoint is also tagged `checkpoint-before-simulated-usb`. Recovery instructions are in [SIMULATED_CAMERA.md](docs/SIMULATED_CAMERA.md). Metadata and sanitized export evidence are included; model weights, engine binaries, source video, credentials and local database files are excluded. A fresh checkout must obtain the source clip separately using [VIDEO_PROVENANCE.md](docs/VIDEO_PROVENANCE.md).
 
 Use a single backend worker and loopback binding for this local submission. Authentication and ordered live multi-camera deployment remain future deployment work. The imported run and benchmark are genuine supplied artifacts; this integration did not retrain, rerun GPU benchmarking, modify PipeGen outputs or change GPU/Docker configuration.
 
 ## Hackathon submission package
 
-`pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Fresh final dashboard screenshots, build output and verification status are in `evidence/final-submission/`.
+`pipegen-export/` contains the sanitized generated IR, DeepStream configs, labels, parser sources, original run-script template and model SHA256/size manifest. Engine binaries, weights and key files are excluded. `docs/HACKATHON_SUBMISSION.md` is the final submission description; `docs/DEMO_90_SECONDS.md` is the timed demonstration script. Earlier submission screenshots, build output and verification status are in `evidence/final-submission/`. Camera-mode evidence is in `evidence/camera-replay/`; these screenshots precede the final white/black typography update.
 
-The official PipeGen IR UI screenshot is missing; actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are included. GitHub push awaits the exact authorized target repository; the connected account currently exposes only an unrelated repository, which was not modified. No hackathon portal submission has been claimed.
+The official PipeGen IR UI screenshot is missing; actual IR JSON, recorded TensorRT speed measurements and successful DeepStream logs are included. The source branch has been pushed to the authorized GitHub repository linked above. No hackathon portal submission has been claimed.

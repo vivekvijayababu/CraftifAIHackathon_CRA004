@@ -1,0 +1,187 @@
+- main:
+  - link "TrafficFlow AI overview":
+    - /url: "#overview"
+    - generic: ↗
+    - heading "TrafficFlow AI" [level=1]
+  - navigation "Main navigation":
+    - link "Overview":
+      - /url: "#overview"
+    - link "Analytics":
+      - /url: "#analytics"
+    - link "Event log":
+      - /url: "#events"
+  - generic: Connected
+  - combobox "Data mode":
+    - option "Recorded PipeGen run · Real data" [selected]
+    - option "Synthetic development"
+  - generic: INTERSECTION INTELLIGENCE
+  - heading "Movement, made clear." [level=2]
+  - paragraph: One intersection. Every crossing in perspective.
+  - text: Recorded analysis · Complete
+  - generic: 900 frames · 29.97 seconds
+  - region "Video and essential traffic statistics":
+    - generic: ANALYZED FOOTAGE
+    - heading "Intersection 01" [level=3]
+    - generic: Recorded · 30s
+    - generic: RECORDED PIPEGEN ●
+    - generic: Genuine PipeGen detections · Source counting line
+    - generic: Frame 123 / 899
+    - complementary "Crossing summary":
+      - generic: THE INTERSECTION, IN NUMBERS
+      - text: Full recorded run
+      - text: Total line crossings
+      - strong: "28"
+      - paragraph: Reported by the source pipeline.
+      - generic: Vehicle crossings
+      - strong: "23"
+      - generic: Person crossings
+      - strong: "5"
+      - generic: DIRECTION OF MOVEMENT
+      - generic: Left → right
+      - strong: 24↗
+      - generic: Right → left
+      - strong: 4↙
+      - paragraph: Crossings count movements across the line. They are distinct from detections and tracked identities.
+  - generic: PATTERNS & MOVEMENT
+  - heading "A closer look at the flow." [level=2]
+  - generic: Verified recorded events
+  - heading "Road-user distribution" [level=3]
+  - generic: Crossings
+  - 'generic "Cars: 20 crossings"':
+    - generic: Cars
+    - strong: "20"
+  - 'generic "Buses: 0 crossings"':
+    - generic: Buses
+    - strong: "0"
+  - 'generic "Trucks: 0 crossings"':
+    - generic: Trucks
+    - strong: "0"
+  - 'generic "Motorcycles: 3 crossings"':
+    - generic: Motorcycles
+    - strong: "3"
+  - 'generic "Bicycles: 0 crossings"':
+    - generic: Bicycles
+    - strong: "0"
+  - 'generic "People: 5 crossings"':
+    - generic: People
+    - strong: "5"
+  - heading "Directional balance" [level=3]
+  - generic: Across the source line
+  - strong: "28"
+  - generic: recorded crossings
+  - 'img "Left → right: 24,Right → left: 4"':
+    - 'generic "Left → right: 24"'
+    - 'generic "Right → left: 4"'
+  - generic: Left → right
+  - strong: "24"
+  - generic: Right → left
+  - strong: "4"
+  - paragraph: Screen direction, as recorded by PipeGen.
+  - heading "Crossing activity" [level=3]
+  - generic: Events per source second
+  - img "Crossing activity over source time":
+    - 'generic "0 seconds: 1 crossings"'
+    - 'generic "1 seconds: 1 crossings"'
+    - 'generic "2 seconds: 1 crossings"'
+    - 'generic "3 seconds: 0 crossings"'
+    - 'generic "4 seconds: 0 crossings"'
+    - 'generic "5 seconds: 1 crossings"'
+    - 'generic "6 seconds: 0 crossings"'
+    - 'generic "7 seconds: 0 crossings"'
+    - 'generic "8 seconds: 0 crossings"'
+    - 'generic "9 seconds: 0 crossings"'
+    - 'generic "10 seconds: 0 crossings"'
+    - 'generic "11 seconds: 0 crossings"'
+    - 'generic "12 seconds: 2 crossings"'
+    - 'generic "13 seconds: 3 crossings"'
+    - 'generic "14 seconds: 1 crossings"'
+    - 'generic "15 seconds: 1 crossings"'
+    - 'generic "16 seconds: 1 crossings"'
+    - 'generic "17 seconds: 1 crossings"'
+    - 'generic "18 seconds: 3 crossings"'
+    - 'generic "19 seconds: 2 crossings"'
+    - 'generic "20 seconds: 1 crossings"'
+    - 'generic "21 seconds: 1 crossings"'
+    - 'generic "22 seconds: 1 crossings"'
+    - 'generic "23 seconds: 0 crossings"'
+    - 'generic "24 seconds: 3 crossings"'
+    - 'generic "25 seconds: 1 crossings"'
+    - 'generic "26 seconds: 0 crossings"'
+    - 'generic "27 seconds: 0 crossings"'
+    - 'generic "28 seconds: 1 crossings"'
+    - 'generic "29 seconds: 2 crossings"'
+    - 'generic "30 seconds: 0 crossings"'
+  - generic: 0s
+  - generic: 30s
+  - generic: THE EVENT RECORD
+  - heading "Every crossing, accounted for." [level=2]
+  - generic: 28 matching events
+  - paragraph: Source events, with original track identities and relative video time.
+  - combobox "Filter object class":
+    - option "All road users" [selected]
+    - option "Cars"
+    - option "Buses"
+    - option "Trucks"
+    - option "Motorcycles"
+    - option "Bicycles"
+    - option "People"
+  - combobox "Filter direction":
+    - option "All directions" [selected]
+    - option "Left → right"
+    - option "Right → left"
+  - table:
+    - rowgroup:
+      - row "Video time Road user Track ID Direction Source line":
+        - columnheader "Video time"
+        - columnheader "Road user"
+        - columnheader "Track ID"
+        - columnheader "Direction"
+        - columnheader "Source line"
+    - rowgroup:
+      - 'row "29.467s People #128 Left → right counting_line"':
+        - cell "29.467s"
+        - cell "People"
+        - cell "#128"
+        - cell "Left → right"
+        - cell "counting_line"
+      - 'row "29.467s Motorcycles #127 Left → right counting_line"':
+        - cell "29.467s"
+        - cell "Motorcycles"
+        - cell "#127"
+        - cell "Left → right"
+        - cell "counting_line"
+      - 'row "28.900s Cars #124 Left → right counting_line"':
+        - cell "28.900s"
+        - cell "Cars"
+        - cell "#124"
+        - cell "Left → right"
+        - cell "counting_line"
+      - 'row "25.300s Cars #110 Left → right counting_line"':
+        - cell "25.300s"
+        - cell "Cars"
+        - cell "#110"
+        - cell "Left → right"
+        - cell "counting_line"
+      - 'row "24.733s Cars #114 Right → left counting_line"':
+        - cell "24.733s"
+        - cell "Cars"
+        - cell "#114"
+        - cell "Right → left"
+        - cell "counting_line"
+      - 'row "24.200s Cars #99 Left → right counting_line"':
+        - cell "24.200s"
+        - cell "Cars"
+        - cell "#99"
+        - cell "Left → right"
+        - cell "counting_line"
+  - button "View all 28 events":
+    - text: View all 28 events
+    - generic: +
+  - generic "Analysis details & controls Source information, detection evidence, counting lines and exports":
+    - text: Analysis details & controls
+    - generic: Source information, detection evidence, counting lines and exports
+    - generic: +
+  - generic: TrafficFlow AI · Intersection intelligence
+  - generic: Real observations. Recorded with provenance.
+  - link "Back to overview ↑":
+    - /url: "#overview"

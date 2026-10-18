@@ -1,0 +1,46 @@
+{
+  "/": {
+    "status": 200,
+    "bytes": 417
+  },
+  "/api/health": {
+    "status": 200,
+    "bytes": 155
+  },
+  "/api/cameras": {
+    "status": 200,
+    "bytes": 121
+  },
+  "/api/lines": {
+    "status": 200,
+    "bytes": 91
+  },
+  "/api/events": {
+    "status": 200,
+    "bytes": 2
+  },
+  "/api/stats": {
+    "status": 200,
+    "bytes": 163
+  },
+  "/api/export?mode=synthetic&format=csv": {
+    "status": 200,
+    "bytes": 901
+  },
+  "/docs": {
+    "status": 200,
+    "bytes": 1013
+  },
+  "/media/sample.mp4": {
+    "status": 200,
+    "bytes": 5316950
+  },
+  "real_ws": {
+    "status": "awaiting_pipeline"
+  },
+  "synthetic_ws": {
+    "detections": 6,
+    "crossings_increased": true
+  },
+  "real_events_empty": true
+}
